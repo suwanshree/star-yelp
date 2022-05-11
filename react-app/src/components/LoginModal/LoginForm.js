@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { Redirect } from 'react-router-dom';
+import { useHistory, Redirect } from "react-router-dom";
 import { login } from '../../store/session';
 
 function LoginForm() {
@@ -18,7 +17,7 @@ function LoginForm() {
         if (data) {
             setErrors(data);
         }
-        history.push("/Home")
+        history.push("/Home");
     };
 
     const updateEmail = (e) => {
@@ -30,16 +29,17 @@ function LoginForm() {
     };
 
     if (sessionUser) return ( <Redirect to="/Home" /> );
+
     return (
         <div className="auth-form-container">
             <form className="auth-form" onSubmit={onLogin}>
-                <div>
+                <div className="errors-div">
                     {errors.map((error, ind) => (
                         <div key={ind}>{error}</div>
                     ))}
                 </div>
                 <div>
-                    <label className="auth-label" htmlFor='email'>Email</label>
+                    <label className="auth-label" htmlFor='email'>Email *</label>
                     <input className="auth-input"
                         name='email'
                         type='text'
@@ -49,7 +49,7 @@ function LoginForm() {
                     />
                 </div>
                 <div>
-                    <label className="auth-label" htmlFor='password'>Password</label>
+                    <label className="auth-label" htmlFor='password'>Password *</label>
                     <input className="auth-input"
                         name='password'
                         type='password'
@@ -57,8 +57,8 @@ function LoginForm() {
                         value={password}
                         onChange={updatePassword}
                     />
-                    <button id="login-submit" type='submit'>Login</button>
                 </div>
+                <button id="auth-submit" type='submit'>Login</button>
             </form>
         </div>
     );

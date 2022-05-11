@@ -21,10 +21,10 @@ const SignupForm = () => {
                 setErrors(data)
             }
         } else setErrors(["Passwords did not match. Please try again."]);
-        history.push("/Home")
+        history.push("/listings")
     };
 
-    if (sessionUser) return <Redirect to="/Home" />;
+    if (sessionUser) return <Redirect to="/listings" />;
 
     return (
         <div className="auth-form-container">

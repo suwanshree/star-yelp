@@ -17,7 +17,7 @@ function LoginForm() {
         if (data) {
             setErrors(data);
         }
-        history.push("/Home");
+        history.push("/listings");
     };
 
     const updateEmail = (e) => {
@@ -28,7 +28,7 @@ function LoginForm() {
         setPassword(e.target.value);
     };
 
-    if (sessionUser) return ( <Redirect to="/Home" /> );
+    if (sessionUser) return ( <Redirect to="/listings" /> );
 
     return (
         <div className="auth-form-container">

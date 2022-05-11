@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LoginModal from '../LoginModal';
 import SignupModal from '../SignupModal';
+import DemoButton from '../auth/DemoButton';
 import LogoutButton from '../auth/LogoutButton';
 import { useSelector } from "react-redux";
 
@@ -22,13 +23,13 @@ const NavBar = () => {
           + Listing
         </li>
         <li className="listings-button">
-          <NavLink to="/" exact={true} className="trips">
+          <NavLink to="/listings" exact={true} className="trips">
             Listings
           </NavLink>
         </li>
         <li className="profile-button">
           <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
+            Profile
           </NavLink>
         </li>
         <li className="logout-button">
@@ -43,7 +44,7 @@ const NavBar = () => {
           About
         </li>
         <li className="demo-button">
-          Demo
+          <DemoButton />
         </li>
         <li className="login-button">
           <LoginModal />

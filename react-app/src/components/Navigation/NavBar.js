@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import LoginModal from '../LoginModal';
 import LogoutButton from '../auth/LogoutButton';
 import { useSelector } from "react-redux";
 
@@ -16,6 +16,9 @@ const NavBar = () => {
         </li>
         <li className="review-button">
           Review
+        </li>
+        <li className="add-listing-button">
+          + Listing
         </li>
         <li className="listings-button">
           <NavLink to="/" exact={true} className="trips">
@@ -42,9 +45,7 @@ const NavBar = () => {
           Demo
         </li>
         <li className="login-button">
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
+          <LoginModal />
         </li>
         <li className="signup-button">
           <NavLink to='/sign-up' exact={true} activeClassName='active'>

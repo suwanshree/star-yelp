@@ -9,4 +9,40 @@
 
 /* Navigation Bar */
 
+.nav-container {
+    width: 100%;
+    top: 0;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    z-index: 1;
+    -webkit-box-shadow: 0 2px 4px -6px #222;
+    -moz-box-shadow: 0 2px 4px -6px #222;
+    box-shadow: 0 2px 4px -4px #222;
+    font-size: 20px;
+}
 
+.static-nav,
+.logged-in-nav,
+.logged-out-nav {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.static-nav li,
+.logged-in-nav li,
+.logged-out-nav li{
+    padding: 10px;
+    color: Blue;
+}
+
+a,
+a:link {
+    text-decoration: none;
+}
+
+a:visited,
+a:link:visited {
+    color: Blue;
+}

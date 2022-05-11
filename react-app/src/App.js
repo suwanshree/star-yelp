@@ -33,10 +33,10 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/listings' >
-          Listings
+          <h1>All Listings</h1>
         </ProtectedRoute>
         <Route path='/' >
-          Splash Page
+          <h1>Splash Page</h1>
         </Route>
       </Switch>
     </BrowserRouter>

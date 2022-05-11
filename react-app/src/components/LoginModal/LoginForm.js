@@ -33,12 +33,13 @@ function LoginForm() {
     return (
         <div className="auth-form-container">
             <form className="auth-form" onSubmit={onLogin}>
+                <h3>Login</h3>
                 <div className="errors-div">
                     {errors.map((error, ind) => (
                         <div key={ind}>{error}</div>
                     ))}
                 </div>
-                <div>
+                <div className="user-box">
                     <label className="auth-label" htmlFor='email'>Email *</label>
                     <input className="auth-input"
                         name='email'
@@ -48,7 +49,7 @@ function LoginForm() {
                         onChange={updateEmail}
                     />
                 </div>
-                <div>
+                <div className="user-box">
                     <label className="auth-label" htmlFor='password'>Password *</label>
                     <input className="auth-input"
                         name='password'

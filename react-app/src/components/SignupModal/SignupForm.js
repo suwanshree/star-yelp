@@ -29,6 +29,7 @@ const SignupForm = () => {
     return (
         <div className="auth-form-container">
             <form className="auth-form" onSubmit={onSignUp}>
+                <h3>Sign Up</h3>
                 <div className="errors-div">
                     {errors.map((error, ind) => (
                         <div key={ind}>{error}</div>

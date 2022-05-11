@@ -32,3 +32,16 @@ def listings():
         return new_listing.to_dict
     else:
         return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+@listing_routes.route('/')
+def get_listings():
+    all_listings = {}
+    listings = Listing.query.all()
+    for listing in listings:
+        all_listings[listing.id] = listing.to_dict
+    return all_listings
+
+@listing_routes.route('/<int:id>')
+def listing(id):
+    listing = Listing.query.get(id)
+    return listing.to_dict()

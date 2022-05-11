@@ -5,6 +5,7 @@ import NavBar from './components/Navigation/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
+import Listings from './components/Listings';
 import { authenticate } from './store/session';
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/listings' >
-          <h1>All Listings</h1>
+          <Listings />
         </ProtectedRoute>
         <Route path='/' >
           <h1>Splash Page</h1>

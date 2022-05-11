@@ -31,7 +31,7 @@ const deleteListing = (id) => {
 
 export const newListing = (newListing) => async (dispatch) => {
     const { userId, title, location, description, imageUrl } = newListing
-    const response = await fetch('/api/listings', {
+    const response = await fetch('/api/listings/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, title, location, description, imageUrl })
@@ -49,11 +49,8 @@ export const newListing = (newListing) => async (dispatch) => {
 export const loadAllListings = () => async (dispatch) => {
     const res = await fetch(`/api/listings`)
     if (res.ok) {
-        console.log('RESPONSE OK')
         const listings = await res.json();
         dispatch(loadListings(listings))
-    } else {
-        console.log('RESPONSE NOT OK')
     }
 }
 

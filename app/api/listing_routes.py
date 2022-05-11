@@ -24,7 +24,7 @@ def listings():
             user_id=form.data["userId"],
             title=form.data["title"],
             location=form.data["location"],
-            descrition=form.data["description"],
+            description=form.data["description"],
             image_url=form.data["imageUrl"],
         )
         db.session.add(new_listing)
@@ -44,4 +44,7 @@ def get_listings():
 @listing_routes.route('/<int:id>')
 def listing(id):
     listing = Listing.query.get(id)
-    return listing.to_dict()
+    if listing:
+        return listing.to_dict
+    else:
+        return {'error': ['No Listing Found']}

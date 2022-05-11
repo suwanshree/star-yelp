@@ -4,6 +4,7 @@ import LoginModal from '../LoginModal';
 import SignupModal from '../SignupModal';
 import DemoButton from '../auth/DemoButton';
 import LogoutButton from '../auth/LogoutButton';
+import AddListingModal from '../AddListingModal';
 import { useSelector } from "react-redux";
 
 const NavBar = () => {
@@ -20,7 +21,7 @@ const NavBar = () => {
           Review
         </li>
         <li className="add-listing-button">
-          + Listing
+          <AddListingModal />
         </li>
         <li className="listings-button">
           <NavLink to="/listings" exact={true} className="trips">

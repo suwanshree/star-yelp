@@ -51,6 +51,7 @@ function AddListingModal() {
         setDescription("");
         setImageUrl("");
         setErrors([]);
+        setHasSubmitted(false);
         setShowModal(false);
         history.push("/listings");
       })

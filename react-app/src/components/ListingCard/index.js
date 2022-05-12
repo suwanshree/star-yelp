@@ -12,28 +12,13 @@ function ListingCard({ listing }) {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-
   useEffect(() => {
     if (!sessionUser) history.push("/");
   }, [sessionUser]);
 
-  console.log(listing);
-
-  return (
-    <div className="listing-container">
-      <div className="listing-image">
-        <img
-          id="listing-image"
-          src={listing?.imageUrl}
-          alt={`${listing?.title} alt`}
-        />
-      </div>
-      <div className="listing-details">
-        <h2 id="listing-title">{listing.title}</h2>
-        <h3 id="listing-location">{listing.location}</h3>
-        <h3 id="listing-rating">{listing.rating}</h3>
-        <p id="listing-description">{listing.description}</p>
-      </div>
+  let sessionLinks;
+  if (sessionUser.id === listing.userId) {
+    sessionLinks = (
       <div className="listing-buttons">
         <button
           id="edit-button"
@@ -61,6 +46,25 @@ function ListingCard({ listing }) {
           </Modal>
         )}
       </div>
+    );
+  }
+
+  return (
+    <div className="listing-container">
+      <div className="listing-image">
+        <img
+          id="listing-image"
+          src={listing?.imageUrl}
+          alt={`${listing?.title} alt`}
+        />
+      </div>
+      <div className="listing-details">
+        <h2 id="listing-title">{listing.title}</h2>
+        <h3 id="listing-location">{listing.location}</h3>
+        <h3 id="listing-rating">{listing.rating}</h3>
+        <p id="listing-description">{listing.description}</p>
+      </div>
+      {sessionLinks}
     </div>
   );
 }

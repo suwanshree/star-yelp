@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { login } from "../../store/session";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
-function DemoButton(){
+function DemoButton() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([])
+  const [errors, setErrors] = useState([]);
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -17,21 +17,26 @@ function DemoButton(){
     if (data) {
       setErrors(data);
     }
-    history.push("/listings")
+    history.push("/listings");
   };
 
   return (
     <form onSubmit={onLogin}>
       <div>
-        <button onClick={e => {
-        setEmail("demo@aa.io")
-        setPassword("password")
-        }} type="demo">Demo</button>
+        <button
+          onClick={(e) => {
+            setEmail("demo@aa.io");
+            setPassword("password");
+          }}
+          type="demo"
+        >
+          Demo
+        </button>
       </div>
       <div>
-          {errors?.map((error) => (
-            <div key={error}>{error}</div>
-          ))}
+        {errors?.map((error) => (
+          <div key={error}>{error}</div>
+        ))}
       </div>
     </form>
   );

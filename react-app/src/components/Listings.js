@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import * as listingActions from "../store/listing";
+import ListingCard from "./ListingCard";
 
 function Listings() {
     const dispatch = useDispatch();
@@ -18,9 +19,9 @@ function Listings() {
     return (
         <div className="page-container">
             <h1 id="all-listings">All Listings</h1>
-            <div>
-                {listings && listings.map(listing =>
-                    <h2 key={listing.id} id="listing-title">{listing.title}</h2>
+            <div className="listing-gallery">
+                {listings && listings.slice(0).reverse().map(listing =>
+                    <ListingCard key={listing.id} listing={listing} />
                 )}
             </div>
         </div>

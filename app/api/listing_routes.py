@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from ..forms import NewListing, EditListing
 from ..models import db, Listing
+from datetime import date
 
 
 listing_routes = Blueprint('listings', __name__)
@@ -40,6 +41,24 @@ def get_listings():
     for listing in listings:
         all_listings[listing.id] = listing.to_dict
     return all_listings
+
+@listing_routes.route("/<int:id>", methods=['PUT'])
+def edit_listing(id):
+    form = EditListing()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        listing = Listing.query.get(id)
+        listing.title= form.data["title"]
+        listing.location = form.data["location"]
+        listing.description = form.data["description"]
+        listing.image_url = form.data["imageUrl"]
+        current_time = date.today()
+        listing.updated_at = current_time
+
+        db.session.add(listing)
+        db.session.commit()
+        return listing.to_dict
+
 
 @listing_routes.route('/<int:id>')
 def listing(id):

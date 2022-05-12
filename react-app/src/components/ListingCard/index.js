@@ -3,12 +3,14 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import EditListingModal from "./EditListingModal";
+import DeleteListingModal from "./DeleteListingModal";
 
 function ListingCard({ listing }) {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
 
-  const [showEditModal, setShowEditModal] = useState(false)
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
 
   useEffect(() => {
@@ -34,7 +36,7 @@ function ListingCard({ listing }) {
       </div>
       <div className="listing-buttons">
         <button
-          className="button5"
+          id="edit-button"
           onClick={(e) => setShowEditModal(!showEditModal)}
         >
           Edit
@@ -43,6 +45,17 @@ function ListingCard({ listing }) {
           <Modal onClose={() => setShowEditModal(false)}>
             <EditListingModal
               hideModal={() => setShowEditModal(false)}
+              listing={listing}
+            />
+          </Modal>
+        )}
+        <button id="delete-button" onClick={(e) => setShowDeleteModal(true)}>
+          Delete
+        </button>
+        {showDeleteModal && (
+          <Modal onClose={() => setShowDeleteModal(false)}>
+            <DeleteListingModal
+              hideModal={() => setShowDeleteModal(false)}
               listing={listing}
             />
           </Modal>

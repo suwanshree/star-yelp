@@ -24,7 +24,7 @@ const NavBar = () => {
           <AddListingModal />
         </li>
         <li className="listings-button">
-          <NavLink to="/listings" exact={true} className="trips">
+          <NavLink to="/listings" exact={true} className="listings">
             Listings
           </NavLink>
         </li>

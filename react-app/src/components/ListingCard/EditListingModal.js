@@ -34,6 +34,7 @@ function EditListingModal({ hideModal, listing }) {
     editedListingData.description = description;
     editedListingData.imageUrl = imageUrl;
     dispatch(editListing(editedListingData))
+      .then(setHasSubmitted(false))
       .then(() => hideModal())
       .catch(async (res) => {
         const data = await res.json();

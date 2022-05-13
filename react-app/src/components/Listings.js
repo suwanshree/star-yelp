@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as listingActions from "../store/listing";
 import ListingCard from "./ListingCard";
+import "./Listings.css";
+
 
 function Listings() {
   const dispatch = useDispatch();

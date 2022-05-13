@@ -1,0 +1,72 @@
+.page-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#all-listings {
+  font-family: "Staatliches", cursive;
+  letter-spacing: 4px;
+  color: rgb(77, 210, 234);
+}
+
+.listing-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 900px;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+}
+
+.listing-details {
+    width: 450px;
+}
+
+#listing-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 3px;
+}
+
+#listing-title {
+  font-family: "Roboto Slab", serif;
+  color: rgb(185, 226, 234);
+  font-size: 20pt;
+  margin-bottom: 2px;
+  text-shadow: 0 0 1px rgb(185, 226, 234);
+}
+
+#listing-location {
+  font-family: "Roboto Slab", serif;
+  font-style: italic;
+  font-size: 12pt;
+  margin-bottom: 2px;
+  color: rgb(137, 192, 202);
+}
+
+#listing-rating {
+  font-family: "Roboto Slab", serif;
+  margin-bottom: 2px;
+  color: rgb(137, 192, 202);
+}
+
+#listing-description {
+  color: rgb(137, 192, 202);
+  font-family: sans-serif;
+  margin-bottom: 2px;
+  font-size: 14pt;
+}
+
+#delete-button {
+    margin-left: 5px;
+}
+
+#delete-button:hover {
+    color: rgb(253, 57, 57);
+    text-shadow: 0 0 1px rgb(252, 63, 63);;
+}

@@ -14,9 +14,9 @@ function SplashPage() {
         <img src={grid} alt="Grid" className="grid" />
       </div>
       <div className="info">
-        <h1>Welcome to Star Yelp,</h1>
-        <h2>your guide to the best businesses</h2>
-        <h2>the 'verse has to offer!</h2>
+        <h1>Welcome to Star Yelp</h1>
+        <h2>Your guide to the best businesses</h2>
+        <h2>the 'verse has to offer</h2>
       </div>
       <div className="businesses">
         <div className="cards">
@@ -41,7 +41,7 @@ function SplashPage() {
         </div>
       </div>
       <div className="info2">
-        <h2>Login or Sign Up to access Full site.</h2>
+        <h2>Login or Sign Up to access the Full site</h2>
       </div>
     </>
   );

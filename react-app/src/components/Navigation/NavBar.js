@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import LoginModal from "../LoginModal";
 import SignupModal from "../SignupModal";
 import DemoButton from "../auth/DemoButton";
 import LogoutButton from "../auth/LogoutButton";
 import AddListingModal from "../AddListingModal";
-import { useSelector } from "react-redux";
+import logo from "./logo.png";
 
 const NavBar = () => {
   const user = useSelector((state) => state.session.user);
@@ -54,9 +55,10 @@ const NavBar = () => {
   return (
     <nav className="nav-container">
       <ul className="static-nav">
-        <li className="home-button">
-          <NavLink to="/" exact={true} activeClassName="active">
-            Home
+        <li>
+          <NavLink to="/" exact={true} className="home-button" activeClassName="active">
+            <h3>Star Yelp</h3>
+            <img src={logo} className="logo-image" alt="Site Logo"></img>
           </NavLink>
         </li>
       </ul>

@@ -7,6 +7,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Listings from "./components/Listings";
 import { authenticate } from "./store/session";
+import SplashPage from './components/SplashPage/SplashPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -37,7 +38,7 @@ function App() {
           <Listings />
         </ProtectedRoute>
         <Route path="/">
-          <h1>Splash Page</h1>
+          <SplashPage />
         </Route>
       </Switch>
     </BrowserRouter>

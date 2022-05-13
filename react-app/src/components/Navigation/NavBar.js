@@ -55,8 +55,9 @@ const NavBar = () => {
   return (
     <nav className="nav-container">
       <ul className="static-nav">
-        <li className="home-button">
-          <NavLink to="/" exact={true} activeClassName="active">
+        <li>
+          <NavLink to="/" exact={true} className="home-button" activeClassName="active">
+            <h3>Star Yelp</h3>
             <img src={logo} className="logo-image" alt="Site Logo"></img>
           </NavLink>
         </li>

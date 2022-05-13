@@ -27,7 +27,7 @@ body {
 .grid {
   position: absolute;
   min-width: 100%;
-  opacity: 8%;
+  opacity: 7%;
   height: 100vh;
   background-size: cover;
   z-index: -1;
@@ -87,6 +87,7 @@ body {
 
 .card-image:hover {
   filter: brightness(150%);
+  opacity: 100%;
   z-index: 2;
   transform: scale(1.5);
 }

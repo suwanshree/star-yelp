@@ -1,18 +1,13 @@
-import stars from "./stars.png";
-import grid from "./grid.png";
 import bar from "./bar.png";
 import food from "./food.png";
 import hospital from "./hospital.png";
 import store from "./store.png";
 import weapons from "./weapons.png";
 
+
 function SplashPage() {
   return (
     <>
-      <div className="background">
-        <img src={stars} alt="Stars" className="stars" />
-        <img src={grid} alt="Grid" className="grid" />
-      </div>
       <div className="info">
         <h1>Welcome to Star Yelp</h1>
         <h2>Your guide to the best businesses</h2>

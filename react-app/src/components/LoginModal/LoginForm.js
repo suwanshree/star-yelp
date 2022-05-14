@@ -35,11 +35,11 @@ function LoginForm() {
     <div className="auth-form-container">
       <form className="auth-form" onSubmit={onLogin}>
         <h3>Login</h3>
-        <div className="errors-div">
+        <ul className="errors-div">
           {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
+            <li key={ind}>{error}</li>
           ))}
-        </div>
+        </ul>
         <div className="user-box">
           <label className="auth-label" htmlFor="email">
             Email *

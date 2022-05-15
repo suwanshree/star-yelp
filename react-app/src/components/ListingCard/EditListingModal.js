@@ -49,6 +49,7 @@ function EditListingModal({ hideModal, listing }) {
 
   return (
     <div className="listing-form-container">
+      <h2>Update Listing Details</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();

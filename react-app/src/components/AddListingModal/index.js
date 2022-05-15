@@ -69,7 +69,7 @@ function AddListingModal() {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <div className="listing-form-container">
-            <h1>New Listing Details</h1>
+            <h2>New Listing Details</h2>
             <form
               className="listing-form"
               onSubmit={(e) => {

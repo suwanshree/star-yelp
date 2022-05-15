@@ -52,7 +52,7 @@ function ListingCard({ listing }) {
   return (
     <div className="listing-container">
       <div className="listing-image">
-        <NavLink to={`/listings/${listing.id}`}>
+        <NavLink to={`/listings/${listing?.id}`}>
           <img
             id="listing-image"
             src={listing?.imageUrl}
@@ -61,10 +61,10 @@ function ListingCard({ listing }) {
         </NavLink>
       </div>
       <div className="listing-details">
-        <h2 id="listing-title">{listing.title}</h2>
-        <h3 id="listing-location">{listing.location}</h3>
-        <h3 id="listing-rating">{listing.rating}</h3>
-        <p id="listing-description">{listing.description}</p>
+        <h2 id="listing-title">{listing?.title}</h2>
+        <h3 id="listing-location">{listing?.location}</h3>
+        <h3 id="listing-rating">{listing?.rating}</h3>
+        <p id="listing-description">{listing?.description}</p>
       </div>
       {sessionLinks}
     </div>

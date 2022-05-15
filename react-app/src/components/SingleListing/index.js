@@ -31,7 +31,7 @@ function SingleListing() {
           <div className="listing-box">
             <h1 id="listing-title">{listing?.title}</h1>
             <h2 id="listing-location">{listing?.location}</h2>
-            <h3 id="listing-rating">{listing.rating}</h3>
+            <h3 id="listing-rating">{listing?.rating}</h3>
           </div>
         </div>
       </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as listingActions from "../../store/listing";
+import * as reviewActions from "../../store/review";
+import ReviewCard from "../ReviewCard";
 import "./SingleListing.css";
 
 function SingleListing() {
@@ -11,6 +13,8 @@ function SingleListing() {
 
   const listing = useSelector((state) => state.listings[listingId]);
   const sessionUser = useSelector((state) => state.session.user);
+  const reviewsObj = useSelector((state) => state.reviews);
+  const reviews = Object.values(reviewsObj);
 
   useEffect(() => {
     if (!sessionUser) history.push("/");
@@ -19,8 +23,12 @@ function SingleListing() {
   useEffect(() => {
     if (listingId) {
       dispatch(listingActions.loadSingleListing(listingId));
+      dispatch(reviewActions.loadAllReviews(listingId));
     }
   }, [listingId]);
+
+  console.log('REVIEWS OBJECT ------->', reviewsObj)
+  console.log('REVIEWS ------->',reviews)
 
   return (
     <div className="page-container">
@@ -39,6 +47,16 @@ function SingleListing() {
           <h2 id="listing-page-location">Hours: Monnday - Sunday 24 / 7</h2>
           <h2 id="listing-page-description">{listing?.description}</h2>
         </div>
+      </div>
+      <h1 id="all-listings">All Reviews</h1>
+      <div className="review-gallery">
+        {reviews &&
+          reviews
+            .slice(0)
+            .reverse()
+            .map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
       </div>
     </div>
   );

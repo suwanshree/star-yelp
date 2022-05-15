@@ -63,7 +63,7 @@ function ListingCard({ listing }) {
       <div className="listing-details">
         <h2 id="listing-title">{listing?.title}</h2>
         <h3 id="listing-location">{listing?.location}</h3>
-        <h3 id="listing-rating">{listing?.rating}</h3>
+        <h3 id="listing-rating">Rating: {listing?.rating}</h3>
         <p id="listing-description">{listing?.description}</p>
       </div>
       {sessionLinks}

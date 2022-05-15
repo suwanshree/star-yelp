@@ -26,7 +26,7 @@
 }
 
 .listing-details {
-    width: 450px;
+  width: 450px;
 }
 
 #listing-image {
@@ -65,12 +65,12 @@
 }
 
 #delete-button {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 #delete-button:hover {
-    color: rgb(253, 57, 57);
-    text-shadow: 0 0 1px rgb(252, 63, 63);;
+  color: rgb(253, 57, 57);
+  text-shadow: 0 0 1px rgb(252, 63, 63);
 }
 
 /* listing modals */

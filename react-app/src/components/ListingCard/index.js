@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import EditListingModal from "./EditListingModal";
 import DeleteListingModal from "./DeleteListingModal";
@@ -52,17 +52,19 @@ function ListingCard({ listing }) {
   return (
     <div className="listing-container">
       <div className="listing-image">
-        <img
-          id="listing-image"
-          src={listing?.imageUrl}
-          alt={`${listing?.title} alt`}
-        />
+        <NavLink to={`/listings/${listing?.id}`}>
+          <img
+            id="listing-image"
+            src={listing?.imageUrl}
+            alt={`${listing?.title} alt`}
+          />
+        </NavLink>
       </div>
       <div className="listing-details">
-        <h2 id="listing-title">{listing.title}</h2>
-        <h3 id="listing-location">{listing.location}</h3>
-        <h3 id="listing-rating">{listing.rating}</h3>
-        <p id="listing-description">{listing.description}</p>
+        <h2 id="listing-title">{listing?.title}</h2>
+        <h3 id="listing-location">{listing?.location}</h3>
+        <h3 id="listing-rating">Rating: {listing?.rating}</h3>
+        <p id="listing-description">{listing?.description}</p>
       </div>
       {sessionLinks}
     </div>

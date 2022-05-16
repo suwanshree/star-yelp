@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from ..forms import NewListing, EditListing
-from ..models import db, Listing
+from ..models import db, Listing, Review
 from datetime import date
 
 
@@ -66,7 +66,6 @@ def delete_listing(id):
     db.session.commit()
     return {}
 
-
 @listing_routes.route('/<int:id>')
 def listing(id):
     listing = Listing.query.get(id)
@@ -74,3 +73,16 @@ def listing(id):
         return listing.to_dict
     else:
         return {'error': ['No Listing Found']}
+
+# For all reviews within a listing
+
+@listing_routes.route('/<int:id>/reviews', methods=['GET'])
+def listing_reviews(id):
+    listing_reviews = Review.query.filter(Review.listing_id == id).all()
+    if listing_reviews:
+        all_reviews = {}
+        for review in listing_reviews:
+            all_reviews[review.id] = review.to_dict
+        return all_reviews
+    else:
+        return {'error': ['No Reviews found for this Listing']}

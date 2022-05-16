@@ -99,7 +99,7 @@ body {
 .logged-out-nav {
   display: flex;
   margin-top: 20px;
-  margin-right: 160px;
+  margin-right: 150px;
   text-decoration: none;
   list-style-type: none;
   overflow: hidden;
@@ -108,7 +108,7 @@ body {
 .logged-in-nav li,
 .logged-out-nav li {
   padding: 10px;
-  width: 180px;
+  width: 120px;
   margin-left: 10px;
   color: rgb(139, 196, 209);
   overflow: hidden;
@@ -117,7 +117,7 @@ body {
 
 .home-button {
   display: flex;
-  margin-left: 160px;
+  margin-left: 150px;
   font-family: "Staatliches", cursive;
   flex-direction: row;
   align-items: center;
@@ -126,8 +126,8 @@ body {
 }
 
 .logo-image {
-  width: 10%;
-  height: 10%;
+  width: 43px;
+  height: 50px;
   margin-left: 5px;
 }
 

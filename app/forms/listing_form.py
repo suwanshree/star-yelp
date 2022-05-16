@@ -18,3 +18,7 @@ class EditListing(FlaskForm):
     description = StringField("Description", validators=[DataRequired()])
     imageUrl = StringField("Image URL", validators=[DataRequired()])
     submit = SubmitField("Submit")
+
+
+class EditRating(FlaskForm):
+    rating = IntegerField("Rating", validators=[DataRequired()])

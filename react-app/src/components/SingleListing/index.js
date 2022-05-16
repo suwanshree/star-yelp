@@ -6,6 +6,7 @@ import * as reviewActions from "../../store/review";
 import { Modal } from "../../context/Modal";
 import EditListingModal from "../ListingCard/EditListingModal";
 import DeleteListingModal from "../ListingCard/DeleteListingModal";
+import AddReviewModal from "../AddReviewModal";
 import ReviewCard from "../ReviewCard";
 import "./SingleListing.css";
 
@@ -21,6 +22,7 @@ function SingleListing() {
 
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showReviewModal, setShowReviewModal] = useState(false);
 
   useEffect(() => {
     if (!sessionUser) history.push("/");
@@ -34,7 +36,7 @@ function SingleListing() {
   }, [listingId]);
 
   let sessionLinks;
-  if (sessionUser.id === listing.userId) {
+  if (listing && sessionUser.id === listing.userId) {
     sessionLinks = (
       <div className="listing-buttons">
         <button
@@ -64,26 +66,30 @@ function SingleListing() {
         )}
       </div>
     );
+  } else {
+    sessionLinks = <AddReviewModal listingId={listingId} />;
   }
 
   return (
     <div className="page-container">
       <div className="single-listing">
-        <div
-          className="listing-background"
-          style={{ backgroundImage: `url(${listing?.imageUrl})` }}
-        >
-          <div className="listing-box">
-            <h1 id="listing-page-title">{listing?.title}</h1>
-            <h2 id="listing-page-location">{listing?.location}</h2>
-            <h3 id="listing-page-rating">Rating: {listing?.rating}</h3>
+        <div className="inner-listing">
+          <div
+            className="listing-background"
+            style={{ backgroundImage: `url(${listing?.imageUrl})` }}
+          >
+            <div className="listing-box">
+              <h1 id="listing-page-title">{listing?.title}</h1>
+              <h2 id="listing-page-location">{listing?.location}</h2>
+              <h3 id="listing-page-rating">Rating: {listing?.rating}</h3>
+            </div>
+          </div>
+          <div className="listing-page-description">
+            <h2 id="listing-page-location">Hours: Monnday - Sunday 24 / 7</h2>
+            <h2 id="listing-page-description">{listing?.description}</h2>
           </div>
         </div>
-        <div className="listing-page-description">
-          <h2 id="listing-page-location">Hours: Monnday - Sunday 24 / 7</h2>
-          <h2 id="listing-page-description">{listing?.description}</h2>
-        </div>
-        {sessionLinks}
+        <div className="session-div">{sessionLinks}</div>
       </div>
       <h1 id="all-listings">All Reviews</h1>
       <div className="review-gallery">
@@ -91,9 +97,7 @@ function SingleListing() {
           reviews
             .slice(0)
             .reverse()
-            .map((review) => (
-              <ReviewCard key={review.id} review={review} />
-            ))}
+            .map((review) => <ReviewCard key={review.id} review={review} />)}
       </div>
     </div>
   );

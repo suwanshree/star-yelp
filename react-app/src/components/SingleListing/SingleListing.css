@@ -3,7 +3,7 @@
 .single-listing {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 90%;
   padding: 30px;
   border-radius: 3px;
@@ -18,7 +18,7 @@
 }
 
 .session-div {
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 .listing-background {

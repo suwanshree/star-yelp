@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-function ListingCard({ review }) {
+function ReviewCard({ review }) {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -21,4 +21,4 @@ function ListingCard({ review }) {
   );
 }
 
-export default ListingCard;
+export default ReviewCard;

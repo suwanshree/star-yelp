@@ -81,7 +81,7 @@ def listing_reviews(id):
     listing_reviews = Review.query.filter(Review.listing_id == id).all()
     if listing_reviews:
         all_reviews = {}
-        for review in all_reviews:
+        for review in listing_reviews:
             all_reviews[review.id] = review.to_dict
         return all_reviews
     else:

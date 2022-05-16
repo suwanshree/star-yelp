@@ -24,6 +24,7 @@ function EditReviewModal({ hideModal, review }) {
     if (errors.length > 0) return;
 
     const editedReviewData = {};
+    editedReviewData.id = review.id;
     editedReviewData.title = title;
     editedReviewData.text = text;
     editedReviewData.rating = rating;
@@ -33,7 +34,7 @@ function EditReviewModal({ hideModal, review }) {
       .then(setErrors([]))
       .then(() => hideModal())
       .catch(async (res) => {
-        const data = await res.json();
+        const data = await res; //.json()
         if (data && data.errors) setErrors(data.errors);
       });
   };

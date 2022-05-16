@@ -53,7 +53,7 @@ function ReviewCard({ review }) {
     <div className="listing-container">
       <div className="listing-details">
         <h2 id="listing-title">{review?.title}</h2>
-        <h3 id="listing-rating">Rating: {review?.rating}</h3>
+        <h3 id="listing-rating">{review.rating ? `Rating: ${review?.rating}`: "Be the First to leave a review!"}</h3>
         <h3 id="listing-location">{review?.text}</h3>
       </div>
       {sessionLinks}

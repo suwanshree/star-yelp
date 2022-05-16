@@ -2,13 +2,23 @@
 
 .single-listing {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
   width: 90%;
   padding: 30px;
   border-radius: 3px;
   margin-bottom: 20px;
   box-shadow: 0 0 5px #03e9f4;
+}
+
+.inner-listing {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.session-div {
+  margin-top: 15px;
 }
 
 .listing-background {
@@ -53,7 +63,7 @@
 }
 
 .listing-page-description {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 #listing-page-description {

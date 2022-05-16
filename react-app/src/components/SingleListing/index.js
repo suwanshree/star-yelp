@@ -22,7 +22,6 @@ function SingleListing() {
 
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [showReviewModal, setShowReviewModal] = useState(false);
 
   useEffect(() => {
     if (!sessionUser) history.push("/");

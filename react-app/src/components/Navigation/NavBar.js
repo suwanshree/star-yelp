@@ -16,7 +16,6 @@ const NavBar = () => {
     sessionLinks = (
       <ul className="logged-in-nav">
         <li className="about-button">About</li>
-        <li className="review-button">Review</li>
         <li className="add-listing-button">
           <AddListingModal />
         </li>

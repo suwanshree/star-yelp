@@ -12,6 +12,8 @@ function ReviewCard({ review }) {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  
+
   useEffect(() => {
     if (!sessionUser) history.push("/");
   }, [sessionUser]);
@@ -51,10 +53,10 @@ function ReviewCard({ review }) {
 
   return (
     <div className="listing-container">
-      <div className="listing-details">
+      <div className="review-details">
         <h2 id="listing-title">{review?.title}</h2>
-        <h3 id="listing-rating">{review.rating ? `Rating: ${review?.rating}`: "Be the First to leave a review!"}</h3>
-        <h3 id="listing-location">{review?.text}</h3>
+        <h3 id="listing-location">{review.rating ? `Rating: ${review?.rating}`: "Be the First to leave a review!"}</h3>
+        <h3 id="listing-rating">{review?.text}</h3>
       </div>
       {sessionLinks}
     </div>

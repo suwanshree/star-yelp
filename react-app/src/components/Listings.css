@@ -19,7 +19,7 @@
   margin-top: 20px;
   margin-bottom: 10px;
   width: 900px;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 10px;
   border-radius: 3px;
   box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
@@ -29,10 +29,15 @@
   width: 450px;
 }
 
+.review-details {
+  width: 770px;
+}
+
 #listing-image {
   width: 300px;
   height: 200px;
   border-radius: 3px;
+  margin-right: 10px;
 }
 
 #listing-title {

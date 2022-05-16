@@ -34,6 +34,11 @@ function SingleListing() {
     }
   }, [listingId]);
 
+  let singleUserReview = true;
+  for (let i = 0; i < reviews.length; i++) {
+    if (reviews[i].userId === sessionUser.id) singleUserReview = false;
+  }
+
   let sessionLinks;
   if (listing && sessionUser.id === listing.userId) {
     sessionLinks = (
@@ -65,7 +70,7 @@ function SingleListing() {
         )}
       </div>
     );
-  } else {
+  } else if (singleUserReview === true) {
     sessionLinks = <AddReviewModal listingId={listingId} />;
   }
 
@@ -90,8 +95,8 @@ function SingleListing() {
         </div>
         <div className="session-div">{sessionLinks}</div>
       </div>
-      <h1 id="all-listings">All Reviews</h1>
       <div className="review-gallery">
+        <h1 id="all-listings">All Reviews</h1>
         {reviews &&
           reviews
             .slice(0)

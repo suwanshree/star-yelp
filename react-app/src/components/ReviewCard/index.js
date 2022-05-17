@@ -5,18 +5,17 @@ import { Modal } from "../../context/Modal";
 import EditReviewModal from "./EditReviewModal";
 import DeleteReviewModal from "./DeleteReviewModal";
 
-function ReviewCard({ review }) {
+function ReviewCard({ review, setNewReviewId }) {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
 
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  
-
   useEffect(() => {
     if (!sessionUser) history.push("/");
-  }, [sessionUser]);
+    setNewReviewId(review.id)
+  }, [sessionUser, setNewReviewId]);
 
   let sessionLinks;
   if (sessionUser.id === review.userId) {

@@ -28,6 +28,15 @@ def review():
             text=form.data["text"],
             rating=form.data["rating"],
         )
+
+        listing = Listing.query.get(form.data["listingId"])
+        listing_reviews = Review.query.filter(Review.listing_id == form.data["listingId"]).all()
+        total_ratings = int(form.data["rating"])
+        for listing_review in listing_reviews:
+            total_ratings = total_ratings + int(listing_review.rating)
+        average_rating = total_ratings / (len(listing_reviews) + 1)
+        listing.rating = (round(average_rating)) * 2
+
         db.session.add(new_review)
         db.session.commit()
         return new_review.to_dict
@@ -40,11 +49,22 @@ def edit_review(id):
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         review = Review.query.get(id)
+        previous_rating = review.rating
+        listing_id = review.listing_id
         review.title= form.data["title"]
         review.text = form.data["text"]
         review.rating = form.data["rating"]
         current_time = date.today()
         review.updated_at = current_time
+
+        listing = Listing.query.get(listing_id)
+        listing_reviews = Review.query.filter(Review.listing_id == listing_id).all()
+        total_ratings = int(form.data["rating"])
+        for listing_review in listing_reviews:
+            total_ratings = total_ratings + int(listing_review.rating)
+        total_ratings = total_ratings - previous_rating
+        average_rating = (total_ratings / len(listing_reviews))
+        listing.rating = (round(average_rating)) * 2
 
         db.session.add(review)
         db.session.commit()
@@ -53,6 +73,17 @@ def edit_review(id):
 @review_routes.route("/<int:id>", methods=['DELETE'])
 def delete_review(id):
     review = Review.query.get(id)
+
+    previous_rating = review.rating
+    listing_id = review.listing_id
+    listing = Listing.query.get(listing_id)
+    listing_reviews = Review.query.filter(Review.listing_id == listing_id).all()
+    total_ratings = 0
+    for listing_review in listing_reviews:
+        total_ratings = total_ratings + int(listing_review.rating)
+    average_rating = (total_ratings - previous_rating) / (len(listing_reviews) - 1)
+    listing.rating = (round(average_rating)) * 2
+
     db.session.delete(review)
     db.session.commit()
     return {}

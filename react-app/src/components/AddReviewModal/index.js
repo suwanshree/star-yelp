@@ -94,12 +94,12 @@ function AddReviewModal({ listingId }) {
                 <option value="5">5</option>
               </select>
               <label className="listing-label">Review *</label>
-              <input
+              <textarea
                 onChange={(e) => setText(e.target.value)}
-                type="text"
-                className="listing-input-description"
+                className="listing-input-textarea"
                 placeholder="Review Text..."
                 value={text}
+                rows={5}
               />
               <button id="listing-submit" type="submit">
                 Submit Review

@@ -8,6 +8,7 @@ function DeleteReviewModal({ hideModal, review }) {
     e.preventDefault();
     dispatch(removeReview(review.id));
     hideModal();
+    window.location.reload();
   };
   const handleCancelClick = (e) => {
     e.preventDefault();

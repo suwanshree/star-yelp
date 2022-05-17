@@ -98,12 +98,12 @@ function AddListingModal() {
                 value={location}
               />
               <label className="listing-label">Description *</label>
-              <input
+              <textarea
                 onChange={(e) => setDescription(e.target.value)}
-                type="text"
-                className="listing-input-description"
+                className="listing-input-textarea"
                 placeholder="Describe the listing..."
                 value={description}
+                rows={5}
               />
               <label className="listing-label">Image URL *</label>
               <input

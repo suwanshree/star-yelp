@@ -79,12 +79,12 @@ function EditListingModal({ hideModal, listing }) {
           value={location}
         />
         <label className="listing-label">Description *</label>
-        <input
+        <textarea
           onChange={(e) => setDescription(e.target.value)}
-          type="text"
-          className="listing-input-description"
+          className="listing-input-textarea"
           placeholder={"Listing Description"}
           value={description}
+          rows={5}
         />
         <label className="listing-label">Image URL *</label>
         <input
@@ -98,7 +98,7 @@ function EditListingModal({ hideModal, listing }) {
           <button id="listing-submit" type="submit">
             Update Listing
           </button>
-          <button id="listing-submit" onClick={handleCancelClick}>
+          <button id="delete-button" onClick={handleCancelClick}>
             Cancel
           </button>
         </div>

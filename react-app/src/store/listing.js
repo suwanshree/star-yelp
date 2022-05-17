@@ -81,7 +81,7 @@ export const removeListing = (idString) => async (dispatch) => {
 
 export const loadSingleListing = (id) => async (dispatch) => {
   const res = await fetch(`/api/listings/${id}`);
-
+  console.log("INSIDE THUNK OF LINSTINGS!!!!")
   if (res.ok) {
     const data = await res.json();
     if (data.errors) return data.errors;

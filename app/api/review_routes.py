@@ -28,6 +28,9 @@ def review():
             text=form.data["text"],
             rating=form.data["rating"],
         )
+        listing = Listing.query.get(form.data["listingId"])
+        listing.rating = form.data["rating"]
+
         db.session.add(new_review)
         db.session.commit()
         return new_review.to_dict

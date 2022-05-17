@@ -22,17 +22,19 @@ function SingleListing() {
 
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [newReviewId, setNewReviewId] = useState("");
 
   useEffect(() => {
     if (!sessionUser) history.push("/");
   }, [sessionUser]);
 
   useEffect(() => {
+    console.log(reviews);
     if (listingId) {
       dispatch(listingActions.loadSingleListing(listingId));
       dispatch(reviewActions.loadAllReviews(listingId));
     }
-  }, [listingId]);
+  }, [listingId, dispatch, newReviewId]);
 
   let singleUserReview = true;
   for (let i = 0; i < reviews.length; i++) {
@@ -97,11 +99,12 @@ function SingleListing() {
       </div>
       <div className="review-gallery">
         <h1 id="all-listings">All Reviews</h1>
+        {console.log("REVIEWS --------->", listing)}
         {reviews &&
           reviews
             .slice(0)
             .reverse()
-            .map((review) => <ReviewCard key={review.id} review={review} />)}
+            .map((review) => <ReviewCard key={review.id} review={review} setNewReviewId={setNewReviewId}/>)}
       </div>
     </div>
   );

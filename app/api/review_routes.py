@@ -49,7 +49,6 @@ def edit_review(id):
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         review = Review.query.get(id)
-        previous_rating = review.rating
         listing_id = review.listing_id
         review.title= form.data["title"]
         review.text = form.data["text"]
@@ -59,10 +58,9 @@ def edit_review(id):
 
         listing = Listing.query.get(listing_id)
         listing_reviews = Review.query.filter(Review.listing_id == listing_id).all()
-        total_ratings = int(form.data["rating"])
+        total_ratings = 0
         for listing_review in listing_reviews:
             total_ratings = total_ratings + int(listing_review.rating)
-        total_ratings = total_ratings - previous_rating
         average_rating = (total_ratings / len(listing_reviews))
         listing.rating = (round(average_rating)) * 2
 

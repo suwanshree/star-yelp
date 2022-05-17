@@ -30,7 +30,7 @@
 }
 
 .review-details {
-  width: 770px;
+  width: 740px;
 }
 
 #listing-image {
@@ -161,4 +161,94 @@
   border-radius: 10px;
   box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
     0 0 100px #03e9f4;
+}
+
+/* Delete modals */
+
+.delete-listing-modal {
+  height: auto;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.08);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(22, 50, 54, 0.6);
+  padding: 50px 35px;
+}
+
+.delete-listing-modal * {
+  font-family: "Roboto Slab", serif;
+  color: rgb(139, 196, 209);
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+#delete-button {
+  position: center;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 30px;
+  margin-right: 20px;
+  letter-spacing: 4px;
+  border-radius: 5px;
+}
+
+#delete-button:hover {
+  background: #f42303;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #f42303, 0 0 25px #f42303, 0 0 50px #f42303,
+    0 0 100px #f42303;
+}
+
+#cancel-button {
+  position: center;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 30px;
+  margin-right: 20px;
+  letter-spacing: 4px;
+  border-radius: 5px;
+}
+
+#cancel-button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+#card-delete {
+  margin-left: 10px;
+}
+
+#card-delete:hover {
+  color: rgb(243, 11, 11);
+  text-shadow: 0 0 5px #f40f03;
+}
+
+.review-actions{
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
 }

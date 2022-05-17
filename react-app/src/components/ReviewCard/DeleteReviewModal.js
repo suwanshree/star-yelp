@@ -25,7 +25,7 @@ function DeleteReviewModal({ hideModal, review }) {
           <button id="delete-button" type="submit">
             Confirm Delete
           </button>
-          <button id="delete-button" onClick={handleCancelClick}>
+          <button id="cancel-button" onClick={handleCancelClick}>
             Cancel
           </button>
         </div>

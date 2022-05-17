@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import LoginModal from "../LoginModal";
 import SignupModal from "../SignupModal";
 import DemoButton from "../auth/DemoButton";
-import LogoutButton from "../auth/LogoutButton";
 import AddListingModal from "../AddListingModal";
+import Profile from './Profile';
 import logo from "./logo.png";
 
 const NavBar = () => {
@@ -25,12 +25,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li className="profile-button">
-          <NavLink to="/users" exact={true} activeClassName="active">
-            Profile
-          </NavLink>
-        </li>
-        <li className="logout-button">
-          <LogoutButton />
+          <Profile />
         </li>
       </ul>
     );

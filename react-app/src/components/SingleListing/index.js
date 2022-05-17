@@ -29,12 +29,11 @@ function SingleListing() {
   }, [sessionUser]);
 
   useEffect(() => {
-    console.log(reviews);
     if (listingId) {
       dispatch(listingActions.loadSingleListing(listingId));
       dispatch(reviewActions.loadAllReviews(listingId));
     }
-  }, [listingId, dispatch, newReviewId]);
+  }, [listingId, newReviewId]);
 
   let singleUserReview = true;
   for (let i = 0; i < reviews.length; i++) {
@@ -99,7 +98,6 @@ function SingleListing() {
       </div>
       <div className="review-gallery">
         <h1 id="all-listings">All Reviews</h1>
-        {console.log("REVIEWS --------->", listing)}
         {reviews &&
           reviews
             .slice(0)

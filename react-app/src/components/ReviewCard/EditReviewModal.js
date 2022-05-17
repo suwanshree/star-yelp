@@ -33,6 +33,7 @@ function EditReviewModal({ hideModal, review }) {
       .then(setHasSubmitted(false))
       .then(setErrors([]))
       .then(() => hideModal())
+      .then(window.location.reload())
       .catch(async (res) => {
         const data = await res; //.json()
         if (data && data.errors) setErrors(data.errors);
@@ -75,17 +76,17 @@ function EditReviewModal({ hideModal, review }) {
           <option value="5">5</option>
         </select>
         <label className="listing-label">Review *</label>
-        <input
+        <textarea
           onChange={(e) => setText(e.target.value)}
-          type="text"
-          className="listing-input-description"
+          className="listing-input-textarea"
           placeholder="Review Text..."
           value={text}
+          rows={5}
         />
         <button id="listing-submit" type="submit">
           Update Review
         </button>
-        <button id="listing-submit" onClick={handleCancelClick}>
+        <button id="delete-button" onClick={handleCancelClick}>
           Cancel
         </button>
       </form>

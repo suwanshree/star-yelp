@@ -25,7 +25,7 @@ function DeleteListingModal({ hideModal, listing }) {
           <button id="delete-button" type="submit">
             Confirm Delete
           </button>
-          <button id="delete-button" onClick={handleCancelClick}>
+          <button id="cancel-button" onClick={handleCancelClick}>
             Cancel
           </button>
         </div>

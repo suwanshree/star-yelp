@@ -58,7 +58,7 @@ function SingleListing() {
             />
           </Modal>
         )}
-        <button id="delete-button" onClick={(e) => setShowDeleteModal(true)}>
+        <button id="card-delete" onClick={(e) => setShowDeleteModal(true)}>
           Delete
         </button>
         {showDeleteModal && (

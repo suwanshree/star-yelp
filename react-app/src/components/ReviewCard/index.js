@@ -11,11 +11,24 @@ function ReviewCard({ review, setNewReviewId }) {
 
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [reviewUser, setReviewUser] = useState({});
+  const userId = review.userId;
 
   useEffect(() => {
     if (!sessionUser) history.push("/");
-    setNewReviewId(review.id)
+    setNewReviewId(review.id);
   }, [sessionUser, setNewReviewId]);
+
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    (async () => {
+      const response = await fetch(`/api/users/${userId}`);
+      const reviewUser = await response.json();
+      setReviewUser(reviewUser);
+    })();
+  }, [userId]);
 
   let sessionLinks;
   if (sessionUser.id === review.userId) {
@@ -35,7 +48,7 @@ function ReviewCard({ review, setNewReviewId }) {
             />
           </Modal>
         )}
-        <button id="delete-button" onClick={(e) => setShowDeleteModal(true)}>
+        <button id="card-delete" onClick={(e) => setShowDeleteModal(true)}>
           Delete
         </button>
         {showDeleteModal && (
@@ -54,10 +67,17 @@ function ReviewCard({ review, setNewReviewId }) {
     <div className="listing-container">
       <div className="review-details">
         <h2 id="listing-title">{review?.title}</h2>
-        <h3 id="listing-location">{review.rating ? `Rating: ${review?.rating}`: "Be the First to leave a review!"}</h3>
+        <h3 id="listing-location">
+          {review.rating
+            ? `Rating: ${review?.rating}`
+            : "Be the First to leave a review!"}
+        </h3>
         <h3 id="listing-rating">{review?.text}</h3>
       </div>
-      {sessionLinks}
+      <div className="review-actions">
+        <h4 id="listing-rating">Review by: {reviewUser.username}</h4>
+        {sessionLinks}
+      </div>
     </div>
   );
 }

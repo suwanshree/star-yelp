@@ -8,6 +8,7 @@ function DeleteReviewModal({ hideModal, review }) {
     e.preventDefault();
     dispatch(removeReview(review.id));
     hideModal();
+    window.location.reload();
   };
   const handleCancelClick = (e) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ function DeleteReviewModal({ hideModal, review }) {
           <button id="delete-button" type="submit">
             Confirm Delete
           </button>
-          <button id="delete-button" onClick={handleCancelClick}>
+          <button id="cancel-button" onClick={handleCancelClick}>
             Cancel
           </button>
         </div>

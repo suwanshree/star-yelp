@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import EditReviewModal from "./EditReviewModal";
 import DeleteReviewModal from "./DeleteReviewModal";
+import ReactStars from "react-rating-stars-component";
 
 function ReviewCard({ review, setNewReviewId }) {
   const history = useHistory();
@@ -64,13 +65,23 @@ function ReviewCard({ review, setNewReviewId }) {
     );
   }
 
+  const ratingStars = {
+    size: 20,
+    count: 5,
+    isHalf: false,
+    value: (review?.rating),
+    color: "gray",
+    edit: false,
+    activeColor: "cyan",
+  };
+
   return (
     <div className="listing-container">
       <div className="review-details">
         <h2 id="listing-title">{review?.title}</h2>
-        <h3 id="listing-location">
+        <h3 id="listing-rating">
           {review.rating
-            ? `Rating: ${review?.rating}`
+            ? <ReactStars {...ratingStars} />
             : "Be the First to leave a review!"}
         </h3>
         <h3 id="listing-rating">{review?.text}</h3>

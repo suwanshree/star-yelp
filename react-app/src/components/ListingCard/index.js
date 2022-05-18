@@ -4,6 +4,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import EditListingModal from "./EditListingModal";
 import DeleteListingModal from "./DeleteListingModal";
+import ReactStars from "react-rating-stars-component";
 
 function ListingCard({ listing }) {
   const history = useHistory();
@@ -49,6 +50,16 @@ function ListingCard({ listing }) {
     );
   }
 
+  const ratingStars = {
+    size: 25,
+    count: 5,
+    isHalf: true,
+    value: (listing?.rating)/2,
+    color: "gray",
+    edit: false,
+    activeColor: "cyan",
+  };
+
   return (
     <div className="listing-container">
       <div className="listing-image">
@@ -63,7 +74,7 @@ function ListingCard({ listing }) {
       <div className="listing-details">
         <h2 id="listing-title">{listing?.title}</h2>
         <h3 id="listing-location">{listing?.location}</h3>
-        <h3 id="listing-rating">Rating: {listing?.rating}</h3>
+        <ReactStars {...ratingStars} />
         <p id="listing-description">{listing?.description}</p>
       </div>
       {sessionLinks}

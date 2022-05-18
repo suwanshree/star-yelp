@@ -64,7 +64,7 @@ function AddListingModal() {
   return (
     <>
       <button className="add-listing-button" onClick={() => setShowModal(true)}>
-        Add Listing
+        + Listing
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

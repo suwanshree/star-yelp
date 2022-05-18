@@ -5,7 +5,8 @@ import LoginModal from "../LoginModal";
 import SignupModal from "../SignupModal";
 import DemoButton from "../auth/DemoButton";
 import AddListingModal from "../AddListingModal";
-import Profile from './Profile';
+import Profile from "./Profile";
+import About from "./About";
 import logo from "./logo.png";
 
 const NavBar = () => {
@@ -15,16 +16,18 @@ const NavBar = () => {
   if (user) {
     sessionLinks = (
       <ul className="logged-in-nav">
-        <li className="about-button">About</li>
-        <li className="add-listing-button">
+        <li className="about-button" id="nav-buttons">
+          <About />
+        </li>
+        <li className="add-listing-button" id="nav-buttons">
           <AddListingModal />
         </li>
-        <li className="listings-button">
+        <li className="listings-button" id="nav-buttons">
           <NavLink to="/listings" exact={true} className="listings">
             Listings
           </NavLink>
         </li>
-        <li className="profile-button">
+        <li className="profile-button" id="nav-buttons">
           <Profile />
         </li>
       </ul>
@@ -32,14 +35,16 @@ const NavBar = () => {
   } else {
     sessionLinks = (
       <ul className="logged-out-nav">
-        <li className="about-button">About</li>
-        <li className="demo-button">
+        <li className="about-button" id="nav-buttons">
+          <About />
+        </li>
+        <li className="demo-button" id="nav-buttons">
           <DemoButton />
         </li>
-        <li className="login-button">
+        <li className="login-button" id="nav-buttons">
           <LoginModal />
         </li>
-        <li className="signup-button">
+        <li className="signup-button" id="nav-buttons">
           <SignupModal />
         </li>
       </ul>
@@ -50,7 +55,13 @@ const NavBar = () => {
     <nav className="nav-container">
       <ul className="static-nav">
         <li>
-          <NavLink to="/" exact={true} className="home-button" activeClassName="active">
+          <NavLink
+            to="/"
+            exact={true}
+            className="home-button"
+            id="nav-buttons"
+            activeClassName="active"
+          >
             <h3>Star Yelp</h3>
             <img src={logo} className="logo-image" alt="Site Logo"></img>
           </NavLink>

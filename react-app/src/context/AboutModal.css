@@ -1,0 +1,48 @@
+#AboutModal{
+    position: fixed;
+    top: 150px;
+    right: 600px;
+    z-index: 3;
+  }
+  
+  #AboutModal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  #AboutModal-content {
+    height: 165px;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.08);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: transparent;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(22, 50, 54, 0.6);
+    padding: 15px 15px;
+  }
+  
+  .AboutModal-content * {
+    font-family: "Poppins", sans-serif;
+    color: rgb(139, 196, 209);
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+  }
+  
+  .about-dropdown li {
+    font-family: "Poppins", sans-serif;
+    color: rgb(139, 196, 209);
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    list-style-type: none;
+  }
+  
+  

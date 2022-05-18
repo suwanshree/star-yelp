@@ -47,7 +47,7 @@ export const newListing = (newListing) => async (dispatch) => {
 };
 
 export const loadAllListings = () => async (dispatch) => {
-  const res = await fetch(`/api/listings`);
+  const res = await fetch(`/api/listings/`);
   if (res.ok) {
     const listings = await res.json();
     dispatch(loadListings(listings));

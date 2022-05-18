@@ -17,6 +17,7 @@ function ReviewCard({ review, setNewReviewId }) {
   useEffect(() => {
     if (!sessionUser) history.push("/");
     setNewReviewId(review.id);
+    return; // Warning for react state component needs return
   }, [sessionUser, setNewReviewId]);
 
   useEffect(() => {

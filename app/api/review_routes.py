@@ -76,11 +76,14 @@ def delete_review(id):
     listing_id = review.listing_id
     listing = Listing.query.get(listing_id)
     listing_reviews = Review.query.filter(Review.listing_id == listing_id).all()
-    total_ratings = 0
-    for listing_review in listing_reviews:
-        total_ratings = total_ratings + int(listing_review.rating)
-    average_rating = (total_ratings - previous_rating) / (len(listing_reviews) - 1)
-    listing.rating = (round(average_rating)) * 2
+    if len(listing_reviews) != 1:
+        total_ratings = 0
+        for listing_review in listing_reviews:
+            total_ratings = total_ratings + int(listing_review.rating)
+        average_rating = (total_ratings - previous_rating) / (len(listing_reviews) - 1)
+        listing.rating = (round(average_rating)) * 2
+    else:
+        listing.rating = 0
 
     db.session.delete(review)
     db.session.commit()

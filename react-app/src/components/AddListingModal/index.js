@@ -24,11 +24,37 @@ function AddListingModal() {
   useEffect(() => {
     let errors = [];
     if (!title.length) errors.push("Title field cannot be empty.");
+    if (title.length < 3)
+      errors.push("Title field needs minimum 3 characters.");
+    if (title.length > 50)
+      errors.push("Title field cannot exceed 50 characters.");
     if (!location.length) errors.push("Location field cannot be empty.");
+    if (location.length < 3)
+      errors.push("Location field needs minimum 3 characters.");
+    if (location.length > 50)
+      errors.push("Location field cannot exceed 50 characters.");
     if (!description.length) errors.push("Description field cannot be empty.");
+    if (description.length < 20)
+      errors.push("Description field needs minimum 20 characters.");
+    if (description.length > 400)
+      errors.push("Description field cannot exceed 400 characters.");
     if (!imageUrl.length) errors.push("Image URL must be provided.");
     if (!imageUrl.match(url)) errors.push("INVALID Image URL, please retry.");
-
+    if (imageUrl.match(url)) {
+      if (
+        !(
+          imageUrl.endsWith(".png") ||
+          imageUrl.endsWith(".jpg") ||
+          imageUrl.endsWith(".jpeg") ||
+          imageUrl.endsWith(".gif") ||
+          imageUrl.endsWith(".webp")
+        )
+      ) {
+        errors.push(
+          "INVALID Image URL format, accepted links end with: .png / .jpg / .jpeg / .webp or .gif"
+        );
+      }
+    }
     setErrors(errors);
   }, [title, location, description, imageUrl]);
 

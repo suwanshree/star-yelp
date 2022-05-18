@@ -235,7 +235,7 @@ def seed_listings():
 
     listing24 = Listing(
         user_id=4,
-        title="Twin’s Sandwiches",
+        title="Twyn’s Sandwiches",
         location='Promenade, New Babbage, MicroTech, Stanton System', 
         description="Stop by to try our new line of nourishing sandwiches.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879311/star-yelp/twyns-sandwiches_frzcgh.jpg",

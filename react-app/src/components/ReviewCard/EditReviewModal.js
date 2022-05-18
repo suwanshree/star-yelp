@@ -13,7 +13,15 @@ function EditReviewModal({ hideModal, review }) {
   useEffect(() => {
     let errors = [];
     if (!title.length) errors.push("Title field cannot be empty.");
+    if (title.length < 3)
+      errors.push("Title field needs minimum 3 characters.");
+    if (title.length > 50)
+      errors.push("Title field cannot exceed 50 characters.");
     if (!text.length) errors.push("Review field cannot be empty.");
+    if (text.length < 20)
+      errors.push("Review field needs minimum 20 characters.");
+    if (text.length > 1200)
+      errors.push("Review field cannot exceed 1200 characters.");
     if (!rating.length) errors.push("Rating field cannot be empty.");
 
     setErrors(errors);

@@ -17,7 +17,7 @@ function ReviewCard({ review, setNewReviewId }) {
   useEffect(() => {
     if (!sessionUser) history.push("/");
     setNewReviewId(review.id);
-    return; // Warning for react state component needs return
+    // return; // Warning for react state component needs return
   }, [sessionUser, setNewReviewId]);
 
   useEffect(() => {
@@ -76,7 +76,9 @@ function ReviewCard({ review, setNewReviewId }) {
         <h3 id="listing-rating">{review?.text}</h3>
       </div>
       <div className="review-actions">
-        <h4 id="listing-rating">Review by: {reviewUser.username}</h4>
+        <h4 id="listing-rating">
+          {review.rating ? `Review by: ${reviewUser.username}` : ""}
+        </h4>
         {sessionLinks}
       </div>
     </div>

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ModalProvider } from "./context/Modal";
 import { ProfileModalProvider } from "./context/ProfileModal";
+import { AboutModalProvider } from "./context/AboutModal";
 import "./index.css";
 import App from "./App";
 import configureStore from "./store";
@@ -14,7 +15,9 @@ ReactDOM.render(
     <Provider store={store}>
       <ModalProvider>
         <ProfileModalProvider>
-          <App />
+          <AboutModalProvider>
+            <App />
+          </AboutModalProvider>
         </ProfileModalProvider>
       </ModalProvider>
     </Provider>

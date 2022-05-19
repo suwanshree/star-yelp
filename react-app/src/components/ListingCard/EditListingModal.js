@@ -24,8 +24,8 @@ function EditListingModal({ hideModal, listing }) {
     if (!location.length) errors.push("Location field cannot be empty.");
     if (location.length < 3)
       errors.push("Location field needs minimum 3 characters.");
-    if (location.length > 50)
-      errors.push("Location field cannot exceed 50 characters.");
+      if (location.length > 100)
+      errors.push("Location field cannot exceed 100 characters.");
     if (!description.length) errors.push("Description field cannot be empty.");
     if (description.length < 20)
       errors.push("Description field needs minimum 20 characters.");

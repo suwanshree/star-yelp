@@ -27,8 +27,20 @@ def is_email(form, field):
     if(not re.fullmatch(regex, email)):
         raise ValidationError('Invalid e-mail address.')
 
+def username_check(form, field):
+    # Checking for valid length for username
+    username = field.data
+    if len(username) < 3 or len(username) > 20:
+        raise ValidationError('Invalid username length, use 3 to 20 characters.')
+
+def password_check(form, field):
+    # Checking for valid length for password
+    password = field.data
+    if len(password) < 6 or len(password) > 30:
+        raise ValidationError('Invalid password length, use 6 to 30 characters.')
+
 class SignUpForm(FlaskForm):
     username = StringField(
-        'username', validators=[DataRequired(), username_exists])
+        'username', validators=[DataRequired(), username_exists, username_check])
     email = StringField('email', validators=[DataRequired(), user_exists, is_email])
-    password = StringField('password', validators=[DataRequired()])
+    password = StringField('password', validators=[DataRequired(), password_check])

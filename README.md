@@ -146,9 +146,12 @@ each of the following variables:
 <h3 align="center">Star Yelp</h3>
 
   <p align="center">
-    A portfolio clone of Yelp in the style of robertspaceindustries.com
+    A portfolio clone of [Yelp](https://www.yelp.com/) in the style of [RSI Website](https://robertspaceindustries.com/)
     <br />
-    <a href="https://star-yelp.herokuapp.com/"><strong>Explore the docs »</strong></a>
+    <a href="https://star-yelp.herokuapp.com/"><strong>Explore the site »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/suwanshree/star-yelp/wiki"><strong>Explore the docs »</strong></a>
     <br />
   </p>
 </div>

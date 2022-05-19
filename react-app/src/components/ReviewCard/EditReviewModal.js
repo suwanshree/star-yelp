@@ -55,6 +55,109 @@ function EditReviewModal({ hideModal, review }) {
     hideModal();
   };
 
+  let selectedRating;
+  if (rating === 1 || rating === "1") {
+    selectedRating = (
+      <select
+        onChange={(e) => setRating(e.target.value)}
+        className="select-label"
+        value={rating}
+      >
+        <option>Select</option>
+        <option selected value="1">
+          1
+        </option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    );
+  } else if (rating === 2 || rating === "2") {
+    selectedRating = (
+      <select
+        onChange={(e) => setRating(e.target.value)}
+        className="select-label"
+        value={rating}
+      >
+        <option>Select</option>
+        <option value="1">1</option>
+        <option selected value="2">
+          2
+        </option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    );
+  } else if (rating === 3 || rating === "3") {
+    selectedRating = (
+      <select
+        onChange={(e) => setRating(e.target.value)}
+        className="select-label"
+        value={rating}
+      >
+        <option>Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option selected value="3">
+          3
+        </option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    );
+  } else if (rating === 4 || rating === "4") {
+    selectedRating = (
+      <select
+        onChange={(e) => setRating(e.target.value)}
+        className="select-label"
+        value={rating}
+      >
+        <option>Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option selected value="4">
+          4
+        </option>
+        <option value="5">5</option>
+      </select>
+    );
+  } else if (rating === 5 || rating === "5") {
+    selectedRating = (
+      <select
+        onChange={(e) => setRating(e.target.value)}
+        className="select-label"
+        value={rating}
+      >
+        <option>Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option selected value="5">
+          5
+        </option>
+      </select>
+    );
+  } else if (rating === "Select") {
+    selectedRating = (
+      <select
+        onChange={(e) => setRating(e.target.value)}
+        className="select-label"
+        value={rating}
+      >
+        <option selected>Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    );
+  }
+
   return (
     <div className="listing-form-container">
       <h2>Update Review Details</h2>
@@ -78,18 +181,7 @@ function EditReviewModal({ hideModal, review }) {
           value={title}
         />
         <label className="listing-label">Rating *</label>
-        <select
-          onChange={(e) => setRating(e.target.value)}
-          className="select-label"
-          value={rating}
-        >
-          <option selected>Select</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        {selectedRating}
         <label className="listing-label">Review *</label>
         <textarea
           onChange={(e) => setText(e.target.value)}

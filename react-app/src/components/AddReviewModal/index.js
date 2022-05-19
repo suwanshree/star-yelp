@@ -29,7 +29,9 @@ function AddReviewModal({ listingId }) {
       errors.push("Review field needs minimum 20 characters.");
     if (text.length > 1200)
       errors.push("Review field cannot exceed 1200 characters.");
-    if (!rating.length) errors.push("Rating field cannot be empty.");
+    if (!rating.length) errors.push("Please select a rating value of 1 - 5.");
+    if (rating.length > 1)
+      errors.push("Please select a rating value of 1 - 5.");
 
     setErrors(errors);
   }, [title, text, rating]);
@@ -92,9 +94,11 @@ function AddReviewModal({ listingId }) {
               />
               <label className="listing-label">Rating *</label>
               <select
+                className="select-label"
                 onChange={(e) => setRating(e.target.value)}
                 value={rating}
               >
+                <option selected>Select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

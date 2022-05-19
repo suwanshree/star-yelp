@@ -1,8 +1,8 @@
-import bar from "./bar.png";
-import food from "./food.png";
-import hospital from "./hospital.png";
-import store from "./store.png";
-import weapons from "./weapons.png";
+import bar from "../../images/bar.png";
+import food from "../../images/food.png";
+import hospital from "../../images/hospital.png";
+import store from "../../images/store.png";
+import weapons from "../../images/weapons.png";
 
 
 function SplashPage() {

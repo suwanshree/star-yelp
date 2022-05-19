@@ -7,7 +7,7 @@ import DemoButton from "../auth/DemoButton";
 import AddListingModal from "../AddListingModal";
 import Profile from "./Profile";
 import About from "./About";
-import logo from "./logo.png";
+import logo from "../../images/logo.png";
 
 const NavBar = () => {
   const user = useSelector((state) => state.session.user);

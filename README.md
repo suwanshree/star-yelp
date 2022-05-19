@@ -116,6 +116,10 @@ each of the following variables:
 
 8. *Attention!* Please run this command *only if you wish to seed your production database*: `heroku run -a HEROKU_APP_NAME flask seed all`
 
+9. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+
+<br>
+
 ## Helpful commands
 |    Command            |    Purpose    |
 | -------------         | ------------- |
@@ -126,4 +130,132 @@ each of the following variables:
 | `flask seed all`      | Just a helpful syntax to run queries against the db to seed data. See the **app/seeds** folder for reference and more details |
 | `heroku login -i`      | Authenticate your heroku-cli using the command line. Drop the -i to authenticate via the browser |
 | `heroku authorizations:create` | Once authenticated, use this to generate an Oauth token |
-| `heroku run -a <app name>` | Run a command from within the deployed container on Heroku |
+| `heroku run -a star-yelp` | Run a command from within the deployed container on Heroku |
+
+
+
+<div id="top"></div>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <!-- <a href="https://github.com/suwanshree/star-yelp"> -->
+    <img src="react-app/src/images/logo.png" alt="Logo" width="86" height="100">
+  </a>
+
+<h3 align="center">Star Yelp</h3>
+
+  <p align="center">
+    A portfolio clone of Yelp in the style of robertspaceindustries.com
+    <br />
+    <a href="https://star-yelp.herokuapp.com/"><strong>Explore the docs »</strong></a>
+    <br />
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#key-features">Key Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#build-with">Built With</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Star Yelp, a Yelp clone, is a business/service review website for users to share their listing information with other site users and also provide feedback in the form of reviews and ratings for listings posted by other users, all in the expansive world of the video game "Star Citizen". Users have the ability to edit and delete their listings after posting and they can also edit and delete their reviews/ratings. With Star Yelp, say goodbye to wasting precious quantum fuel jumping around the 'verse to meet your best needs, check the reviews and save time and energy!
+
+<img src="react-app/src/images/splashpage.png" width=auto height=auto>
+
+
+**Key Features**
+* Create new users and have user login with authorization
+* Once logged in, view all listings & reviews across the site posted by all users
+* Post new listings then edit and delete them later if required
+* Post new reviews on other listings then edit and delete them later if required
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- BUILT WITH -->
+## Built With
+
+* [Javascript](https://www.javascript.com)
+* [Python](https://www.python.org/)
+* [PostgreSQL](https://www.postgresql.org/docs/)
+* [Heroku](https://www.heroku.com)
+* [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+* [SQLAlchemy](https://www.sqlalchemy.org/)
+* [React](https://reactjs.org/)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+* Users can signup and login to use Star Yelp, and can also use the demo feature to explore the website quickly.
+
+ <img src="react-app/src/images/login.png" width=auto height=auto>
+
+
+* Once logged in, the user is directed to the listings page, where logged-in users can view a list of all the listings in the website.
+
+ <img src="react-app/src/images/listingspage.png" width=auto height=auto>
+
+
+* Logged in users can create a new listing. It can also be edited and deleted.
+
+ <img src="react-app/src/images/newlisting.png" width=auto height=auto>
+
+
+* Logged in users can click into any individual listing, to enter the single listings page and view all the reviews associated with it.
+
+ <img src="react-app/src/images/singlelisting.png" width=auto height=auto>
+
+
+* Once in the single listing page logged in users can add their own review if it is not a listing owned by them. Here they can also edit and delete their own review. To be fair to listing owners, users have a limit of one review per listing.
+
+ <img src="react-app/src/images/newreview.png" width=auto height=auto>
+
+
+* Users can click on the profile tab in the navigation bar to view their user information.
+
+<img src="react-app/src/images/profile.png" width=auto height=auto>
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Suwanshree Acharya - [GitHub](https://github.com/suwanshree)
+
+Project Repo Link: [https://github.com/suwanshree/star-yelp](https://github.com/suwanshree/star-yelp)
+
+Project Link: [https://star-yelp.herokuapp.com/](https://star-yelp.herokuapp.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>

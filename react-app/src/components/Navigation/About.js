@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AboutModal } from "../../context/AboutModal";
-import githublogo from "./githublogo.png";
-import linkedinlogo from "./linkedinlogo.png";
+import githublogo from "../../images/githublogo.png";
+import linkedinlogo from "../../images/linkedinlogo.png";
 
 function About() {
   const [showMenu, setShowMenu] = useState(false);

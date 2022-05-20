@@ -98,7 +98,7 @@ function AddReviewModal({ listingId }) {
                 onChange={(e) => setRating(e.target.value)}
                 value={rating}
               >
-                <option selected>Select</option>
+                <option>Select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

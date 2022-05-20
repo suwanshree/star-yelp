@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 import { signUp } from "../../store/session";
 import DemoButton from "../auth/DemoButton";
+import signupGif from "../../images/signupgif.gif";
 
 const SignupForm = () => {
   const history = useHistory();
@@ -29,64 +30,71 @@ const SignupForm = () => {
 
   return (
     <div className="auth-form-container">
-      <form className="auth-form" onSubmit={onSignUp}>
-        <h3>Sign Up</h3>
-        <ul className="errors-div">
-          {errors.map((error, ind) => (
-            <li key={ind}>{error}</li>
-          ))}
-        </ul>
-        <div>
-          <label className="auth-label">User Name *</label>
-          <input
-            className="auth-input"
-            type="text"
-            name="username"
-            placeholder="username"
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
-          ></input>
+      <div className="auth-form-left">
+        <form className="auth-form" onSubmit={onSignUp}>
+          <h3>Sign Up</h3>
+          <ul className="errors-div">
+            {errors.map((error, ind) => (
+              <li key={ind}>{error}</li>
+            ))}
+          </ul>
+          <div>
+            <label className="auth-label">User Name *</label>
+            <input
+              className="auth-input"
+              type="text"
+              name="username"
+              placeholder="username"
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+            ></input>
+          </div>
+          <div>
+            <label className="auth-label">Email *</label>
+            <input
+              className="auth-input"
+              type="text"
+              name="email"
+              placeholder="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            ></input>
+          </div>
+          <div>
+            <label className="auth-label">Password *</label>
+            <input
+              className="auth-input"
+              type="password"
+              name="password"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            ></input>
+          </div>
+          <div>
+            <label className="auth-label">Confirm Password *</label>
+            <input
+              className="auth-input"
+              type="password"
+              name="repeat_password"
+              placeholder="repeat password"
+              onChange={(e) => setRepeatPassword(e.target.value)}
+              value={repeatPassword}
+              required={true}
+            ></input>
+          </div>
+          <button id="auth-submit" type="submit">
+            Sign Up
+          </button>
+        </form>
+        <div id="form-demo">
+          <DemoButton />
         </div>
-        <div>
-          <label className="auth-label">Email *</label>
-          <input
-            className="auth-input"
-            type="text"
-            name="email"
-            placeholder="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          ></input>
-        </div>
-        <div>
-          <label className="auth-label">Password *</label>
-          <input
-            className="auth-input"
-            type="password"
-            name="password"
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          ></input>
-        </div>
-        <div>
-          <label className="auth-label">Confirm Password *</label>
-          <input
-            className="auth-input"
-            type="password"
-            name="repeat_password"
-            placeholder="repeat password"
-            onChange={(e) => setRepeatPassword(e.target.value)}
-            value={repeatPassword}
-            required={true}
-          ></input>
-        </div>
-        <button id="auth-submit" type="submit">
-          Sign Up
-        </button>
-      </form>
-      <div id="form-demo">
-        <DemoButton />
+      </div>
+      <div className="auth-form-right">
+        <h3>Register a new account now!</h3>
+        <img src={signupGif} className="login-gif" alt="Login Gif"></img>
+        <h3>Greatness awaits!</h3>
       </div>
     </div>
   );

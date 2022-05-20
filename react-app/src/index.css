@@ -231,7 +231,8 @@ a:hover {
 
 .auth-form-container {
   height: auto;
-  width: 400px;
+  width: 930px;
+  display: flex;
   background-color: rgba(255, 255, 255, 0.08);
   position: absolute;
   transform: translate(-50%, -50%);
@@ -245,7 +246,33 @@ a:hover {
   padding: 50px 35px;
 }
 
-.auth-form-container * {
+.auth-form-left {
+  height: auto;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.auth-form-right {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 45px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.login-gif {
+  opacity: 0.8;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.auth-form-container *,
+.auth-form-left *,
+.auth-form-right *{
   font-family: "Poppins", sans-serif;
   color: rgb(139, 196, 209);
   letter-spacing: 0.5px;
@@ -253,7 +280,9 @@ a:hover {
   border: none;
 }
 
-.auth-form-container h3 {
+.auth-form-container h3,
+.auth-form-left h3,
+.auth-form-right h3 {
   font-size: 26px;
   font-weight: 400;
   line-height: 30px;

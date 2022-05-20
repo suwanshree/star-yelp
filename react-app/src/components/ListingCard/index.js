@@ -25,7 +25,7 @@ function ListingCard({ listing }) {
           id="edit-button"
           onClick={(e) => setShowEditModal(!showEditModal)}
         >
-          <i class="fa-regular fa-pen-to-square"></i>
+          <i className="fa-regular fa-pen-to-square"></i>
         </button>
         {showEditModal && (
           <Modal onClose={() => setShowEditModal(false)}>
@@ -36,7 +36,7 @@ function ListingCard({ listing }) {
           </Modal>
         )}
         <button id="card-delete" onClick={(e) => setShowDeleteModal(true)}>
-          <i class="fa-regular fa-trash-can"></i>
+          <i className="fa-regular fa-trash-can"></i>
         </button>
         {showDeleteModal && (
           <Modal onClose={() => setShowDeleteModal(false)}>

@@ -1,7 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Star Yelp React app
 
-Your React App will live here.  While is development, run this application from this location using `npm start`.
+To run the application, follow the following steps:
 
-No environment variables are needed to run this application in development, but be sure to set the REACT_APP_BASE_URL environment variable in your dockerfile!
+1. Install all frontend dependencies using `npm install`.
+2. Once the backend is running, start the frontend application using `npm start`.
 
-This app will be automatically built when you push to your main branch on Github. 
+

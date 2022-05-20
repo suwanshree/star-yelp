@@ -31,6 +31,7 @@
     <li><a href="#key-features">Key Features</a></li>
     <li><a href="#frontend-overview">Frontend Overview</a></li>
     <li><a href="#backend-overview">Backend Overview</a></li>
+    <li><a href="#star-yelp-setup">Star Yelp Setup</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#future-implementations">Future Implementations</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -60,26 +61,62 @@ Star Yelp, a Yelp clone, is a business/service review website for users to share
 <!-- BUILT WITH -->
 ## Frontend Overview
 
+Star Yelp is built on a React frontend and uses an npm package for displaying ratings as stars.
+
 Technologies/Frameworks Used
 * [Javascript](https://www.javascript.com)
 * [React](https://reactjs.org/)
 * [Redux](https://redux.js.org/)
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [react-rating-stars-component](https://github.com/ertanhasani/react-stars)
 
 ## Backend Overview
 
+Star Yelp uses a Flask backend and utilizes PostgreSQL as its database. It also uses wtfforms as a form package.
+
 Technologies/Frameworks Used
 * [Python](https://www.python.org/)
 * [PostgreSQL](https://www.postgresql.org/docs/)
-* [Heroku](https://www.heroku.com)
 * [Flask](https://flask.palletsprojects.com/en/2.1.x/)
 * [Wtfforms](https://wtforms.readthedocs.io/)
 * [SQLAlchemy](https://www.sqlalchemy.org/)
 
+The live site is hosted on Heroku using github docker containers.
 
+* [Heroku](https://www.heroku.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## Star Yelp Setup
+
+1. Clone the repository from: https://github.com/suwanshree/star-yelp.git
+2. Install dependencies: 
+    ```bash
+    pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
+    ```
+
+3. Create a **.env** file based on the example with proper settings for your
+   development environment.
+4. Setup your PostgreSQL user, password and database that matches the **.env** file.
+5. Get into your pipenv, migrate your database, seed your database, and run your flask app:
+
+   ```bash
+   pipenv shell
+   ```
+
+   ```bash
+   flask db upgrade
+   ```
+
+   ```bash
+   flask seed all
+   ```
+
+   ```bash
+   flask run
+   ```
+6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
 
 
 
@@ -109,11 +146,6 @@ Technologies/Frameworks Used
 * Once in the single listing page logged in users can add their own review if it is not a listing owned by them. Here they can also edit and delete their own review. To be fair to listing owners, users have a limit of one review per listing.
 
  <img src="react-app/src/images/newreview.png" width=auto height=auto>
-
-
-* Users can click on the profile tab in the navigation bar to view their user information.
-
-<img src="react-app/src/images/profile.png" width=auto height=auto>
 
 
 

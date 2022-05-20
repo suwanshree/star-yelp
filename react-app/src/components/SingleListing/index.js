@@ -8,7 +8,6 @@ import EditListingModal from "../ListingCard/EditListingModal";
 import DeleteListingModal from "../ListingCard/DeleteListingModal";
 import AddReviewModal from "../AddReviewModal";
 import ReviewCard from "../ReviewCard";
-import ReactStars from "react-rating-stars-component";
 import "./SingleListing.css";
 
 function SingleListing() {
@@ -49,7 +48,7 @@ function SingleListing() {
           id="edit-button"
           onClick={(e) => setShowEditModal(!showEditModal)}
         >
-          Edit
+          <i class="fa-regular fa-pen-to-square"></i>
         </button>
         {showEditModal && (
           <Modal onClose={() => setShowEditModal(false)}>
@@ -60,7 +59,7 @@ function SingleListing() {
           </Modal>
         )}
         <button id="card-delete" onClick={(e) => setShowDeleteModal(true)}>
-          Delete
+          <i class="fa-regular fa-trash-can"></i>
         </button>
         {showDeleteModal && (
           <Modal onClose={() => setShowDeleteModal(false)}>
@@ -76,16 +75,6 @@ function SingleListing() {
     sessionLinks = <AddReviewModal listingId={listingId} />;
   }
 
-  const ratingStars = {
-    size: 35,
-    count: 5,
-    isHalf: true,
-    value: (listing?.rating)/2,
-    color: "gray",
-    edit: false,
-    activeColor: "cyan",
-  };
-
   return (
     <div className="page-container">
       <div className="single-listing">
@@ -98,7 +87,6 @@ function SingleListing() {
               <h1 id="listing-page-title">{listing?.title}</h1>
               <h2 id="listing-page-location">{listing?.location}</h2>
               <h3 id="listing-page-rating">Rating: {(listing?.rating)/2}/5</h3>
-              <ReactStars {...ratingStars} />
             </div>
           </div>
           <div className="listing-page-description">

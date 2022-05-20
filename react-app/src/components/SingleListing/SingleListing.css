@@ -42,24 +42,24 @@
   font-size: 40pt;
   margin-bottom: 2px;
   letter-spacing: 4px;
-  text-shadow: 0 0 2px rgb(0, 0, 0);
+  text-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
 
 #listing-page-location {
   font-family: "Roboto Slab", serif;
   font-style: italic;
-  font-size: 16pt;
+  font-size: 18pt;
   margin-bottom: 2px;
   color: rgb(137, 192, 202);
-  text-shadow: 0 0 2px rgb(0, 0, 0);
+  text-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
 
 #listing-page-rating {
   font-family: "Roboto Slab", serif;
   margin-bottom: 2px;
-  font-size: 16pt;
-  color: rgb(137, 192, 202);
-  text-shadow: 0 0 2px rgb(0, 0, 0);
+  font-size: 22pt;
+  color: #FFD700;
+  text-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
 
 .listing-page-description {
@@ -76,4 +76,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.review-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }

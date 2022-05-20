@@ -25,7 +25,7 @@ function ListingCard({ listing }) {
           id="edit-button"
           onClick={(e) => setShowEditModal(!showEditModal)}
         >
-          Edit
+          <i class="fa-regular fa-pen-to-square"></i>
         </button>
         {showEditModal && (
           <Modal onClose={() => setShowEditModal(false)}>
@@ -36,7 +36,7 @@ function ListingCard({ listing }) {
           </Modal>
         )}
         <button id="card-delete" onClick={(e) => setShowDeleteModal(true)}>
-          Delete
+          <i class="fa-regular fa-trash-can"></i>
         </button>
         {showDeleteModal && (
           <Modal onClose={() => setShowDeleteModal(false)}>
@@ -54,7 +54,7 @@ function ListingCard({ listing }) {
     size: 25,
     count: 5,
     isHalf: true,
-    value: (listing?.rating)/2,
+    value: listing?.rating / 2,
     color: "gray",
     edit: false,
     activeColor: "cyan",
@@ -68,6 +68,10 @@ function ListingCard({ listing }) {
             id="listing-image"
             src={listing?.imageUrl}
             alt={`${listing?.title} alt`}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null;
+              currentTarget.src = "https://res.cloudinary.com/dn0ocfiva/image/upload/v1653045697/star-yelp/brokenimage_rtafkm.png";
+            }}
           />
         </NavLink>
       </div>

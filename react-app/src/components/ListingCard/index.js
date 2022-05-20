@@ -54,7 +54,7 @@ function ListingCard({ listing }) {
     size: 25,
     count: 5,
     isHalf: true,
-    value: (listing?.rating)/2,
+    value: listing?.rating / 2,
     color: "gray",
     edit: false,
     activeColor: "cyan",
@@ -68,6 +68,10 @@ function ListingCard({ listing }) {
             id="listing-image"
             src={listing?.imageUrl}
             alt={`${listing?.title} alt`}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null;
+              currentTarget.src = "https://res.cloudinary.com/dn0ocfiva/image/upload/v1653045697/star-yelp/brokenimage_rtafkm.png";
+            }}
           />
         </NavLink>
       </div>

@@ -77,3 +77,9 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+.review-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}

@@ -48,7 +48,7 @@ function SingleListing() {
           id="edit-button"
           onClick={(e) => setShowEditModal(!showEditModal)}
         >
-          Edit
+          <i class="fa-regular fa-pen-to-square"></i>
         </button>
         {showEditModal && (
           <Modal onClose={() => setShowEditModal(false)}>
@@ -59,7 +59,7 @@ function SingleListing() {
           </Modal>
         )}
         <button id="card-delete" onClick={(e) => setShowDeleteModal(true)}>
-          Delete
+          <i class="fa-regular fa-trash-can"></i>
         </button>
         {showDeleteModal && (
           <Modal onClose={() => setShowDeleteModal(false)}>

@@ -88,7 +88,8 @@ body {
   transform-origin: 50% 65%;
   transition: transform 5s, filter 3s ease-in-out;
   filter: brightness(1);
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+  animation: border-animate 6s ease-in-out infinite;
 }
 
 .card-image:hover {

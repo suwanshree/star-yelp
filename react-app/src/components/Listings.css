@@ -161,6 +161,12 @@
   font-size: 12pt;
   margin-bottom: 2px;
   color: rgb(137, 192, 202);
+  flex-wrap: wrap;
+  inline-size: 520px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 #listing-rating {
@@ -174,6 +180,12 @@
   font-family: sans-serif;
   margin-bottom: 2px;
   font-size: 14pt;
+  flex-wrap: wrap;
+  inline-size: 520px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  hyphens: auto;
 }
 
 #delete-button {

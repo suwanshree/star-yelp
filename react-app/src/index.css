@@ -22,10 +22,10 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #03e9f4; 
+  box-shadow: inset 0 0 5px #03e9f4;
   background: rgb(0, 8, 12);
 }
- 
+
 ::-webkit-scrollbar-thumb {
   background: #77e2e8;
   border-radius: 8px;
@@ -33,7 +33,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #55a0a4; 
+  background: #55a0a4;
 }
 
 /* Splash Page */
@@ -88,7 +88,8 @@ body {
   transform-origin: 50% 65%;
   transition: transform 5s, filter 3s ease-in-out;
   filter: brightness(1);
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+  animation: border-animate 6s ease-in-out infinite;
 }
 
 .card-image:hover {
@@ -231,7 +232,7 @@ a:hover {
 
 .auth-form-container {
   height: auto;
-  width: 930px;
+  width: 980px;
   display: flex;
   background-color: rgba(255, 255, 255, 0.08);
   position: absolute;
@@ -258,9 +259,44 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 45px;
+  margin-left: 90px;
   width: 400px;
   border-radius: 10px;
+}
+
+.auth-form-right .line {
+  position: absolute;
+  background-color: rgb(139, 196, 209);
+  box-shadow: 0px 0px 12px rgb(139, 196, 209);
+  width: 4px;
+  height: calc(100% - 20px);
+  top: 10px;
+  left: 475px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.auth-form-right .line .scanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  height: 20px;
+  border-radius: 50%;
+  animation: scanner-loop 3s ease-in-out infinite;
+}
+
+@keyframes scanner-loop {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
 }
 
 .login-gif {
@@ -272,7 +308,7 @@ a:hover {
 
 .auth-form-container *,
 .auth-form-left *,
-.auth-form-right *{
+.auth-form-right * {
   font-family: "Poppins", sans-serif;
   color: rgb(139, 196, 209);
   letter-spacing: 0.5px;

@@ -63,6 +63,10 @@ function ListingCard({ listing }) {
   return (
     <div className="listing-container">
       <div className="listing-image">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
         <NavLink to={`/listings/${listing?.id}`}>
           <img
             id="listing-image"
@@ -70,7 +74,8 @@ function ListingCard({ listing }) {
             alt={`${listing?.title} alt`}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;
-              currentTarget.src = "https://res.cloudinary.com/dn0ocfiva/image/upload/v1653045697/star-yelp/brokenimage_rtafkm.png";
+              currentTarget.src =
+                "https://res.cloudinary.com/dn0ocfiva/image/upload/v1653045697/star-yelp/brokenimage_rtafkm.png";
             }}
           />
         </NavLink>

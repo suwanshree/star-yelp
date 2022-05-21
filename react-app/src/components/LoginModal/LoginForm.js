@@ -77,6 +77,9 @@ function LoginForm() {
         </div>
       </div>
       <div className="auth-form-right">
+        <div class="line right">
+          <div class="scanner"></div>
+        </div>
         <h3>Welcome back citizen</h3>
         <img src={loginGif} className="login-gif" alt="Login Gif"></img>
         <h3>Fuel up and get ready to jump!</h3>

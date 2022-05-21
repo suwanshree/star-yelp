@@ -57,10 +57,21 @@
 .listing-details {
   margin-left: 10px;
   width: 520px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .review-details {
   width: 740px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 #listing-image {

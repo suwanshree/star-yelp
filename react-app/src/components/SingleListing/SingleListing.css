@@ -8,7 +8,8 @@
   padding: 30px;
   border-radius: 3px;
   margin-bottom: 20px;
-  box-shadow: 0 0 5px #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+  animation: border-animate 6s ease-in-out infinite;
 }
 
 .inner-listing {

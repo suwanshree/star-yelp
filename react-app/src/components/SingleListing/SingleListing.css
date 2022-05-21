@@ -80,6 +80,9 @@
   color: rgb(137, 192, 202);
   font-family: sans-serif;
   font-size: 16pt;
+  inline-size: 520px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .listing-buttons {

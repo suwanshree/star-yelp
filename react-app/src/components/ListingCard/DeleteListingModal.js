@@ -1,13 +1,16 @@
 import { useDispatch } from "react-redux";
 import { removeListing } from "../../store/listing";
+import { useHistory } from "react-router-dom";
 
 function DeleteListingModal({ hideModal, listing }) {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(removeListing(listing.id));
     hideModal();
+    history.push("/listings");
   };
   const handleCancelClick = (e) => {
     e.preventDefault();

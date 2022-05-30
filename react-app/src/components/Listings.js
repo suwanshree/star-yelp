@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as listingActions from "../store/listing";
+import BackToTop from "./BackToTop";
 import ListingCard from "./ListingCard";
 import "./Listings.css";
 
@@ -30,6 +31,7 @@ function Listings() {
               <ListingCard key={listing.id} listing={listing} />
             ))}
       </div>
+      <BackToTop />
     </div>
   );
 }

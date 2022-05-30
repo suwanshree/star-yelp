@@ -7,6 +7,28 @@
   align-items: center;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 5px;
+  border: 1px solid #78d3d8;
+  box-shadow: 0 0 2px #77e2e8, 0 0 4px #03e9f4;
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: bolder;
+  line-height: 30px;
+  font-family: "Roboto Slab", serif;
+  padding: 5px;
+}
+
+.back-to-top:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4;
+}
+
 #all-listings {
   font-family: "Staatliches", cursive;
   letter-spacing: 4px;

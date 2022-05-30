@@ -1,10 +1,66 @@
 /* All lisgintgs  */
 
 .page-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.page-left {
+  position: fixed;
+  height: 100%;
+  background-color: #03e9f4;
+  width: 180px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 4px -6px #222;
+  -moz-box-shadow: 0 2px 4px -6px #222;
+  box-shadow: 0 2px 4px -4px #222;
+  font-size: 16pt;
+  background-color: transparent;
+}
+
+.side-bar-container {
+  margin-top: 100px;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 10px 10px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.search-input-textarea {
+  display: block;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 10px 10px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.search-input:hover {
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4;
+  -webkit-text-fill-color: rgb(139, 196, 209);
+}
+
+.page-right {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-left: 290px;
 }
 
 .back-to-top {
@@ -33,6 +89,7 @@
   font-family: "Staatliches", cursive;
   letter-spacing: 4px;
   color: rgb(77, 210, 234);
+  text-align: center;
 }
 
 .listing-container {

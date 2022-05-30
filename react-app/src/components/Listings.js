@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 import * as listingActions from "../store/listing";
 import BackToTop from "./BackToTop";
 import ListingCard from "./ListingCard";
+import SideBar from "./SideBar";
 import "./Listings.css";
-
 
 function Listings() {
   const dispatch = useDispatch();
@@ -21,17 +21,22 @@ function Listings() {
 
   return (
     <div className="page-container">
-      <h1 id="all-listings">All Listings</h1>
-      <div className="listing-gallery">
-        {listings &&
-          listings
-            .slice(0)
-            .reverse()
-            .map((listing) => (
-              <ListingCard key={listing.id} listing={listing} />
-            ))}
+      <div className="page-left">
+        <SideBar />
       </div>
-      <BackToTop />
+      <div className="page-right">
+        <h1 id="all-listings">All Listings</h1>
+        <div className="listing-gallery">
+          {listings &&
+            listings
+              .slice(0)
+              .reverse()
+              .map((listing) => (
+                <ListingCard key={listing.id} listing={listing} />
+              ))}
+        </div>
+        <BackToTop />
+      </div>
     </div>
   );
 }

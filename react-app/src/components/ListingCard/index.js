@@ -12,7 +12,7 @@ function ListingCard({ listing }) {
 
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-
+  
   useEffect(() => {
     if (!sessionUser) history.push("/");
   }, [sessionUser]);

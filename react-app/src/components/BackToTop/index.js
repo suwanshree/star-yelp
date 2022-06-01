@@ -25,7 +25,7 @@ const BackToTop = () => {
       {showButton && (
         <button onClick={scrollToTop} className="back-to-top">
           TOP
-          <i class="fa-solid fa-jet-fighter-up"></i>
+          <i className="fa-solid fa-jet-fighter-up"></i>
         </button>
       )}
     </>

@@ -92,8 +92,8 @@ const SignupForm = () => {
         </div>
       </div>
       <div className="auth-form-right">
-        <div class="line right">
-          <div class="scanner"></div>
+        <div className="line right">
+          <div className="scanner"></div>
         </div>
         <h3>Register a new account now!</h3>
         <img src={signupGif} className="login-gif" alt="Login Gif"></img>

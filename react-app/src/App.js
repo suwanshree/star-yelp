@@ -9,6 +9,7 @@ import User from "./components/User";
 import Listings from "./components/Listings";
 import SplashPage from './components/SplashPage';
 import SingleListing from './components/SingleListing';
+import SearchResults from './components/SearchResults';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -37,6 +38,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/listings" exact={true}>
           <Listings />
+        </ProtectedRoute>
+        <ProtectedRoute path="/results" exact={true}>
+          <SearchResults />
         </ProtectedRoute>
         <ProtectedRoute path="/listings/:listingId">
           <SingleListing />

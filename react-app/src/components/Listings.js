@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as listingActions from "../store/listing";
@@ -12,6 +12,7 @@ function Listings() {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   const listingsObj = useSelector((state) => state.listings);
+  const [searchText, setSearchText] = useState(" ");
   const listings = Object.values(listingsObj);
 
   useEffect(() => {
@@ -22,6 +23,18 @@ function Listings() {
   return (
     <div className="page-container">
       <h1 id="all-listings">All Listings</h1>
+      <div className="search-bar">
+        <input
+          onChange={(e) => setSearchText(e.target.value)}
+          type="text"
+          className="search-input"
+          placeholder="Search Listings..."
+          value={searchText}
+        />
+        <button className="search-submit" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
       <div className="listing-gallery">
         {listings &&
           listings

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import * as listingActions from "../../store/listing";
 import BackToTop from "../BackToTop";
 import ListingCard from "../ListingCard";
-import { SearchContext } from '../../context/Search';
+import { SearchContext } from "../../context/Search";
 
 function SearchResults() {
   const dispatch = useDispatch();
@@ -13,6 +13,9 @@ function SearchResults() {
   const listingsObj = useSelector((state) => state.listings);
   const { currentSearch, setCurrentSearch } = useContext(SearchContext);
   const listings = Object.values(listingsObj);
+  const filteredListings = listings.filter((listing) =>
+    listing.title.toLowerCase().includes(currentSearch.toLowerCase())
+  );
 
   useEffect(() => {
     if (!sessionUser) history.push("/");
@@ -36,18 +39,19 @@ function SearchResults() {
           value={currentSearch}
         />
         <button className="search-submit" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
       <div className="listing-gallery">
-        {listings &&
-          listings
+        {filteredListings &&
+          filteredListings
             .slice(0)
             .reverse()
             .map((listing) => (
               <ListingCard key={listing.id} listing={listing} />
             ))}
       </div>
+      <h2 id="listing-title">No more search results...</h2>
       <BackToTop />
     </div>
   );

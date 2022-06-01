@@ -3,6 +3,7 @@ import { Modal } from "../../context/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as reviewActions from "../../store/review";
+import ReactStars from "react-rating-stars-component";
 
 function AddReviewModal({ listingId }) {
   const [showModal, setShowModal] = useState(false);
@@ -13,7 +14,7 @@ function AddReviewModal({ listingId }) {
   const [userId, setUserId] = useState(sessionUser?.id);
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(5);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -29,7 +30,6 @@ function AddReviewModal({ listingId }) {
       errors.push("Review field needs minimum 20 characters.");
     if (text.length > 1200)
       errors.push("Review field cannot exceed 1200 characters.");
-    if (!rating.length) errors.push("Please select a rating value of 1 - 5.");
     if (rating.length > 1)
       errors.push("Please select a rating value of 1 - 5.");
 
@@ -64,6 +64,17 @@ function AddReviewModal({ listingId }) {
       });
   };
 
+  const ratingStars = {
+    size: 20,
+    count: 5,
+    isHalf: false,
+    value: 5,
+    color: "gray",
+    edit: true,
+    activeColor: "cyan",
+    onChange: (e) => setRating(e),
+  }
+  
   return (
     <>
       <button className="add-listing-button" onClick={() => setShowModal(true)}>
@@ -93,18 +104,7 @@ function AddReviewModal({ listingId }) {
                 value={title}
               />
               <label className="listing-label">Rating *</label>
-              <select
-                className="select-label"
-                onChange={(e) => setRating(e.target.value)}
-                value={rating}
-              >
-                <option>Select</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <ReactStars {...ratingStars} />
               <label className="listing-label">Review *</label>
               <textarea
                 onChange={(e) => setText(e.target.value)}

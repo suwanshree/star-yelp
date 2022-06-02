@@ -33,7 +33,7 @@ function ReviewCard({ review, setNewReviewId }) {
   }, [userId]);
 
   let sessionLinks;
-  if (sessionUser.id !== review.userId) {
+  if (sessionUser.id === review.userId) {
     sessionLinks = (
       <div className="review-buttons">
         <button

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { editReview } from "../../store/review";
+import ReactStars from "react-rating-stars-component";
 
 function EditReviewModal({ hideModal, review }) {
   const dispatch = useDispatch();
@@ -53,6 +54,17 @@ function EditReviewModal({ hideModal, review }) {
     hideModal();
   };
 
+  const ratingStars = {
+    size: 20,
+    count: 5,
+    isHalf: false,
+    value: rating,
+    color: "gray",
+    edit: true,
+    activeColor: "cyan",
+    onChange: (e) => setRating(e),
+  }
+
   return (
     <div className="listing-form-container">
       <h2>Update Review Details</h2>
@@ -76,18 +88,7 @@ function EditReviewModal({ hideModal, review }) {
           value={title}
         />
         <label className="listing-label">Rating *</label>
-        <select
-          onChange={(e) => setRating(e.target.value)}
-          className="select-label"
-          value={rating}
-        >
-          <option>Select</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        <ReactStars {...ratingStars} />
         <label className="listing-label">Review *</label>
         <textarea
           onChange={(e) => setText(e.target.value)}

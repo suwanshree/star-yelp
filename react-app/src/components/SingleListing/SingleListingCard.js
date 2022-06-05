@@ -15,7 +15,7 @@ function SingleListingCard({ listing, reviews, listingId }) {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [totalRatings, setTotalRatings] = useState(0);
-  const [ratingText, setRatingText] = useState("Rating");
+  const [ratingText, setRatingText] = useState("Ratings");
 
   useEffect(() => {
     if (!sessionUser) history.push("/");
@@ -23,10 +23,13 @@ function SingleListingCard({ listing, reviews, listingId }) {
 
   useEffect(() => {
     if (reviews) {
-      if (Array.isArray(reviews[0])) setTotalRatings(0);
-      else {
+      if (Array.isArray(reviews[0])) {
+        setTotalRatings(0);
+        setRatingText("Ratings");
+      } else {
         setTotalRatings(reviews.length);
-        if (reviews.length > 1) setRatingText("Ratings");
+        if (reviews.length < 2) setRatingText("Rating");
+        else setRatingText("Ratings");
       }
     }
   }, [listing, listingId, reviews]);
@@ -91,10 +94,12 @@ function SingleListingCard({ listing, reviews, listingId }) {
           <div className="listing-box">
             <h1 id="listing-page-title">{listing?.title}</h1>
             <h2 id="listing-page-location">{listing?.location}</h2>
-            <ReactStars {...ratingStars} />
-            <h2 id="listing-page-location">
-              ({totalRatings} {ratingText})
-            </h2>
+            <div className="ratings-div">
+              <ReactStars {...ratingStars} />
+              <h2>
+                ({totalRatings} {ratingText})
+              </h2>
+            </div>
           </div>
         </div>
         <div className="listing-page-description">

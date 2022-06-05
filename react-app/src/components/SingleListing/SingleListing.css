@@ -69,6 +69,10 @@
   align-items: center;
 }
 
+.ratings-text {
+  margin-left: 5px;
+}
+
 .listing-page-description {
   margin-left: 30px;
   flex-direction: column;

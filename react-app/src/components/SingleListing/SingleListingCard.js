@@ -96,7 +96,7 @@ function SingleListingCard({ listing, reviews, listingId }) {
             <h2 id="listing-page-location">{listing?.location}</h2>
             <div className="ratings-div">
               <ReactStars {...ratingStars} />
-              <h2>
+              <h2 className="ratings-text">
                 ({totalRatings} {ratingText})
               </h2>
             </div>

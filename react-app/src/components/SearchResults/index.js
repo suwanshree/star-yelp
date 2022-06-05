@@ -29,6 +29,17 @@ function SearchResults() {
 
   return (
     <div className="page-container">
+      <div className="night">
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+      </div>
       <h1 id="all-listings">Search Results</h1>
       <form className="search-bar" onSubmit={onSearch}>
         <input

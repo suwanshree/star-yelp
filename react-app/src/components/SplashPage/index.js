@@ -4,14 +4,34 @@ import hospital from "../../images/hospital.png";
 import store from "../../images/store.png";
 import weapons from "../../images/weapons.png";
 
-
 function SplashPage() {
   return (
     <>
+      <div className="night">
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+      </div>
       <div className="info">
         <h1>Welcome to Star Yelp</h1>
         <h2>Your guide to the best businesses</h2>
         <h2>the 'verse has to offer</h2>
+      </div>
+      <div className="night">
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
       </div>
       <div className="businesses">
         <div className="cards">
@@ -37,6 +57,11 @@ function SplashPage() {
       </div>
       <div className="info2">
         <h2>Login or Sign Up to access the Full site</h2>
+      </div>
+      <div className="night">
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
+        <div className="shooting_star"></div>
       </div>
     </>
   );

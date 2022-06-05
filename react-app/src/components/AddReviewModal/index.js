@@ -56,7 +56,7 @@ function AddReviewModal({ listingId }) {
         setErrors([]);
         setHasSubmitted(false);
         setShowModal(false);
-        history.push(`/listings/${listingId}`);
+        window.location.reload();
       })
       .catch(async (res) => {
         const data = await res.json();

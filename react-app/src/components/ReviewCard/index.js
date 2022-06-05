@@ -6,7 +6,7 @@ import EditReviewModal from "./EditReviewModal";
 import DeleteReviewModal from "./DeleteReviewModal";
 import ReactStars from "react-rating-stars-component";
 
-function ReviewCard({ review, setNewReviewId }) {
+function ReviewCard({ review }) {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -17,9 +17,7 @@ function ReviewCard({ review, setNewReviewId }) {
 
   useEffect(() => {
     if (!sessionUser) history.push("/");
-    setNewReviewId(review.id);
-    // return; // Warning for react state component needs return
-  }, [sessionUser, setNewReviewId]);
+  }, [sessionUser]);
 
   useEffect(() => {
     if (!userId) {

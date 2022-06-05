@@ -59,12 +59,18 @@
   text-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
 
-#listing-page-rating {
+.ratings-div {
   font-family: "Roboto Slab", serif;
   margin-bottom: 2px;
-  font-size: 22pt;
+  font-size: 12pt;
   color: #FFD700;
   text-shadow: 3px 3px 3px rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+}
+
+.ratings-text {
+  margin-left: 5px;
 }
 
 .listing-page-description {

@@ -322,6 +322,7 @@
 
 .listing-form-errors li {
   list-style-type: none;
+  color: red;
   font-family: "Roboto Slab", serif;
 }
 

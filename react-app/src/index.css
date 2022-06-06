@@ -671,6 +671,7 @@ a:hover {
 
 .errors-div li {
   list-style-type: none;
+  color: red;
   font-family: "Roboto Slab", serif;
 }
 

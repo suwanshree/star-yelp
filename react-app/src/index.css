@@ -9,11 +9,13 @@ body {
   background-attachment: fixed;
 }
 
+/* Starfall effect */
+
 .night {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: rotateZ(45deg);
+  transform: rotateZ(90deg);
   z-index: -1;
 }
 
@@ -22,7 +24,7 @@ body {
   left: 50%;
   top: 50%;
   height: 2px;
-  background: linear-gradient(-45deg, rgb(158, 223, 237), rgba(0, 0, 255, 0));
+  background: linear-gradient(-90deg, rgb(158, 223, 237), rgba(0, 0, 255, 0));
   border-radius: 999px;
   filter: drop-shadow(0 0 6px #03e9f4);
   -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;

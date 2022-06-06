@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import bar from "../../images/bar.png";
 import food from "../../images/food.png";
 import hospital from "../../images/hospital.png";
@@ -5,6 +6,12 @@ import store from "../../images/store.png";
 import weapons from "../../images/weapons.png";
 
 function SplashPage() {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, []);
   return (
     <>
       <div className="night">

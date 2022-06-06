@@ -16,10 +16,10 @@ const NavBar = () => {
   if (user) {
     sessionLinks = (
       <ul className="logged-in-nav">
-        <li className="about-button" id="nav-buttons">
+        <li className="listings-button" id="nav-buttons">
           <About />
         </li>
-        <li className="add-listing-button" id="nav-buttons">
+        <li className="listings-button" id="nav-buttons">
           <AddListingModal />
         </li>
         <li className="listings-button" id="nav-buttons">
@@ -27,7 +27,7 @@ const NavBar = () => {
             Listings
           </NavLink>
         </li>
-        <li className="profile-button" id="nav-buttons">
+        <li className="listings-button" id="nav-buttons">
           <Profile />
         </li>
       </ul>
@@ -35,16 +35,16 @@ const NavBar = () => {
   } else {
     sessionLinks = (
       <ul className="logged-out-nav">
-        <li className="about-button" id="nav-buttons">
+        <li className="listings-button" id="nav-buttons">
           <About />
         </li>
-        <li className="demo-button" id="nav-buttons">
+        <li className="listings-button" id="nav-buttons">
           <DemoButton />
         </li>
-        <li className="login-button" id="nav-buttons">
+        <li className="listings-button" id="nav-buttons">
           <LoginModal />
         </li>
-        <li className="signup-button" id="nav-buttons">
+        <li className="listings-button" id="nav-buttons">
           <SignupModal />
         </li>
       </ul>

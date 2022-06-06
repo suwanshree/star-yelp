@@ -45,23 +45,18 @@ function SingleListing() {
         <div className="shooting_star"></div>
       </div>
       <SingleListingCard
-                key={listing?.id}
-                listing={listing}
-                reviews={reviews}
-                listingId={listingId}
-              />
+        key={listing?.id}
+        listing={listing}
+        reviews={reviews}
+        listingId={listingId}
+      />
       <div className="review-gallery">
         <h1 id="all-listings">All Reviews</h1>
         {reviews &&
           reviews
             .slice(0)
             .reverse()
-            .map((review) => (
-              <ReviewCard
-                key={review.id}
-                review={review}
-              />
-            ))}
+            .map((review) => <ReviewCard key={review.id} review={review} />)}
       </div>
     </div>
   );

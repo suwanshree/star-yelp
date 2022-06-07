@@ -47,10 +47,14 @@
 
 .search-input {
   display: block;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
   height: 50px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.07);
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 0 10px;
   font-size: 20px;
   font-weight: 300;
@@ -75,6 +79,12 @@
 }
 
 .search-input:active {
+  box-shadow: 0 0 5px #03e9f4;
+  -webkit-text-fill-color: rgb(139, 196, 209);
+}
+
+.search-input:focus {
+  outline: none;
   box-shadow: 0 0 5px #03e9f4;
   -webkit-text-fill-color: rgb(139, 196, 209);
 }

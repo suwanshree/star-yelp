@@ -10,6 +10,7 @@ import Listings from "./components/Listings";
 import SplashPage from './components/SplashPage';
 import SingleListing from './components/SingleListing';
 import SearchResults from './components/SearchResults';
+import Profile from './components/Profile';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -41,6 +42,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/results" exact={true}>
           <SearchResults />
+        </ProtectedRoute>
+        <ProtectedRoute path="/profile" exact={true}>
+          <Profile />
         </ProtectedRoute>
         <ProtectedRoute path="/listings/:listingId">
           <SingleListing />

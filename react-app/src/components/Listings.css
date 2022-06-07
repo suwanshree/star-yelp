@@ -496,6 +496,54 @@ textarea {
     0 0 100px #03e9f4;
 }
 
+#profile-listing {
+  position: center;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+#profile-listing:hover {
+  background: #004ccf;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0 0 5px #004ccf, 0 0 25px #004ccf, 0 0 50px #004ccf,
+    0 0 100px #004ccf;
+}
+
+#profile-logout {
+  position: center;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 27px;
+  letter-spacing: 4px;
+  border-radius: 5px;
+}
+
+#profile-logout:hover {
+  background: #f42303;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #f42303, 0 0 25px #f42303, 0 0 50px #f42303,
+    0 0 100px #f42303;
+}
+
 #card-delete {
   margin-left: 10px;
 }

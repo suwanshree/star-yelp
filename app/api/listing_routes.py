@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from ..forms import NewListing, EditListing
 from ..models import db, Listing, Review
 from datetime import date
+from app.s3_helpers import (upload_file_to_s3, allowed_file, get_unique_filename)
 
 
 listing_routes = Blueprint('listings', __name__)

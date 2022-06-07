@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import LogoutButton from "../auth/LogoutButton";
 import { ProfileModal } from "../../context/ProfileModal";
@@ -38,7 +39,12 @@ function Profile() {
               <li>
                 <strong>Email:</strong> {user.email}
               </li>
-              <li id="delete-button">
+              <li id="profile-listing">
+                <NavLink to="/profile" exact={true}>
+                  Listings
+                </NavLink>
+              </li>
+              <li id="profile-logout">
                 <LogoutButton />
               </li>
             </ul>

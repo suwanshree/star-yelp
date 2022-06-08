@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 from ..forms import NewListing, EditListing
 from ..models import db, Listing, Review
 from datetime import date
@@ -22,13 +22,25 @@ def listings():
     form = NewListing()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        new_listing = Listing(
-            user_id=form.data["userId"],
-            title=form.data["title"],
-            location=form.data["location"],
-            description=form.data["description"],
-            image_url=form.data["imageUrl"],
-        )
+        if 'image_url' not in request.files:
+            return jsonify({'errors': 'No file'}), 400
+
+        image_url = request.files['image_url']
+
+        if not allowed_file(image_url.filename):
+            return jsonify({'errors': 'File extension not allowed'}), 400
+
+        image_url.filename = get_unique_filename(image_url.filename)
+
+        upload = upload_file_to_s3(image_url)
+
+        if 'url' not in upload:
+            return upload, 400
+
+        url = upload['url']
+
+        new_listing = Listing(userId=form.userId.data, title=form.title.data, location=form.location.data, description=form.description.data, image_url=url)
+
         db.session.add(new_listing)
         db.session.commit()
         return new_listing.to_dict

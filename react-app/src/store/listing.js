@@ -30,11 +30,22 @@ const deleteListing = (id) => {
 // THUNKS
 
 export const newListing = (newListing) => async (dispatch) => {
-  const { userId, title, location, description, imageUrl } = newListing;
+  const { userId, title, location, description, image_url } = newListing;
+
+  const formData = new FormData();
+
+  formData.append("userId", userId);
+  formData.append("title", title);
+  formData.append("location", location);
+  formData.append("description", description);
+
+  if (image_url) {
+    formData.append("image_url", image_url);
+  }
+
   const response = await fetch("/api/listings/", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ userId, title, location, description, imageUrl }),
+    body: formData,
   });
 
   if (response.ok) {

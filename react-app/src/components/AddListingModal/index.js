@@ -131,7 +131,7 @@ function AddListingModal() {
                 value={description}
                 rows={5}
               />
-              <label className="listing-label">Upload *</label>
+              <label className="listing-label">Upload Image *</label>
               <input
                 type="file"
                 className="file-input"

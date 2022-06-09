@@ -39,7 +39,7 @@ def listings():
 
         url = upload['url']
 
-        new_listing = Listing(userId=form.userId.data, title=form.title.data, location=form.location.data, description=form.description.data, image_url=url)
+        new_listing = Listing(user_id=form.user_id.data, title=form.title.data, location=form.location.data, description=form.description.data, image_url=url)
 
         db.session.add(new_listing)
         db.session.commit()

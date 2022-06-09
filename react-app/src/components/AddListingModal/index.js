@@ -10,11 +10,11 @@ function AddListingModal() {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
 
-  const [userId, setUserId] = useState(sessionUser?.id);
+  const [user_id, setUserId] = useState(sessionUser?.id);
   const [title, setTitle] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState(null);
+  const [image_url, setImage] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -38,42 +38,30 @@ function AddListingModal() {
     if (description.length > 400)
       errors.push("Description field cannot exceed 400 characters.");
     // if (!image?.length) errors.push("Image must be provided.");
-    if (image?.size > 2000000) {
-      errors.push("Image size must be less than 2 megabytes");
+    if (image_url?.size > 2000000) {
+      errors.push("Image size must be less than 2 MB.");
     }
-    if (!fileTypes.includes(image?.name?.split(".").pop())) {
-      errors.push("Image file type is not supported");
+    if (!fileTypes.includes(image_url?.name?.split(".").pop())) {
+      errors.push(
+        "Image not provided / file type not supported. Use: png, jpg, jpeg, gif, or webp"
+      );
     }
     setErrors(errors);
-  }, [title, location, description, image]);
+  }, [title, location, description, image_url]);
 
   const submitListing = () => {
     setHasSubmitted(true);
 
-    if (image) console.log(image);
-
     if (errors.length > 0) return;
 
     const newListingData = {
-      userId,
+      user_id,
       title,
       location,
       description,
-      image,
+      image_url,
     };
 
-    //   if (errors.length === 0) {
-    //     setImageLoading(true);
-    //     await dispatch(listingActions.newListing(newListingData));
-    //     history.push("/listings");
-    //     //   setAbout("");
-    //     //   setTitle("");
-    //     //   setVideo(null);
-    //     setImageLoading(false);
-    //     //   setHasSubmitted(false);
-    //     //   setShowErrors(false);
-    //   }
-    // };
     setImageLoading(true);
 
     dispatch(listingActions.newListing(newListingData))
@@ -143,12 +131,21 @@ function AddListingModal() {
                 value={description}
                 rows={5}
               />
-              <label className="listing-label">Image *</label>
-              <input type="file" name="file" onChange={updateImage} />
+              <label className="listing-label">Upload *</label>
+              <input
+                type="file"
+                className="file-input"
+                name="file"
+                onChange={updateImage}
+              />
               <button id="listing-submit" type="submit">
                 Submit Listing
               </button>
-              {imageLoading && <p>Loading...</p>}
+              {imageLoading && (
+                <span className="wrapper">
+                  <i className="spinner"></i>
+                </span>
+              )}
             </form>
           </div>
         </Modal>

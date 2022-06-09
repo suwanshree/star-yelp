@@ -30,11 +30,11 @@ const deleteListing = (id) => {
 // THUNKS
 
 export const newListing = (newListing) => async (dispatch) => {
-  const { userId, title, location, description, image_url } = newListing;
+  const { user_id, title, location, description, image_url } = newListing;
 
   const formData = new FormData();
 
-  formData.append("userId", userId);
+  formData.append("user_id", user_id);
   formData.append("title", title);
   formData.append("location", location);
   formData.append("description", description);

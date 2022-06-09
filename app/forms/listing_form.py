@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired
 
 
 class NewListing(FlaskForm):
-    userId = IntegerField("User", validators=[DataRequired()])
+    user_id = IntegerField("User", validators=[DataRequired()])
     title = StringField("Title", validators=[DataRequired()])
     location = StringField("Location", validators=[DataRequired()])
     description = StringField("Description", validators=[DataRequired()])

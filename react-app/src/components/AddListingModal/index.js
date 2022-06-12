@@ -37,7 +37,6 @@ function AddListingModal() {
       errors.push("Description field needs minimum 20 characters.");
     if (description.length > 400)
       errors.push("Description field cannot exceed 400 characters.");
-    // if (!image?.length) errors.push("Image must be provided.");
     if (image_url?.size > 2000000) {
       errors.push("Image size must be less than 2 MB.");
     }

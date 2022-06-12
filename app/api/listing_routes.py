@@ -79,9 +79,9 @@ def edit_listing(id):
         url = upload['url']
 
         listing = Listing.query.get(id)
-        listing.title= form.data["title"]
-        listing.location = form.data["location"]
-        listing.description = form.data["description"]
+        listing.title = form.title.data
+        listing.location = form.location.data
+        listing.description = form.description.data
         listing.image_url = url
         current_time = date.today()
         listing.updated_at = current_time
@@ -89,6 +89,8 @@ def edit_listing(id):
         db.session.add(listing)
         db.session.commit()
         return listing.to_dict
+    else:
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 @listing_routes.route("/<int:id>", methods=['DELETE'])
 def delete_listing(id):

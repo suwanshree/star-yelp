@@ -30,11 +30,22 @@ const deleteListing = (id) => {
 // THUNKS
 
 export const newListing = (newListing) => async (dispatch) => {
-  const { userId, title, location, description, imageUrl } = newListing;
+  const { user_id, title, location, description, image_url } = newListing;
+
+  const formData = new FormData();
+
+  formData.append("user_id", user_id);
+  formData.append("title", title);
+  formData.append("location", location);
+  formData.append("description", description);
+
+  if (image_url) {
+    formData.append("image_url", image_url);
+  }
+
   const response = await fetch("/api/listings/", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ userId, title, location, description, imageUrl }),
+    body: formData,
   });
 
   if (response.ok) {
@@ -55,17 +66,30 @@ export const loadAllListings = () => async (dispatch) => {
 };
 
 export const editListing = (editedListing) => async (dispatch) => {
-  const id = parseInt(editedListing.id, 10);
+  const { id, title, location, description, image_url } = editedListing;
+
+  const formData = new FormData();
+
+  formData.append("title", title);
+  formData.append("location", location);
+  formData.append("description", description);
+
+  if (image_url) {
+    formData.append("image_url", image_url);
+  }
+
   const res = await fetch(`/api/listings/${id}`, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(editedListing),
+    body: formData,
   });
 
   if (res.ok) {
     const listing = await res.json();
     dispatch(addListing(listing));
-  }
+  } else if (res.status < 500) {
+    const data = await res.json();
+    if (data.errors) return data.errors;
+  } else return ["An error occurred. Please try again."];
 };
 
 export const removeListing = (idString) => async (dispatch) => {

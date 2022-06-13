@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 from ..forms import NewListing, EditListing
 from ..models import db, Listing, Review
 from datetime import date
@@ -22,13 +22,25 @@ def listings():
     form = NewListing()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        new_listing = Listing(
-            user_id=form.data["userId"],
-            title=form.data["title"],
-            location=form.data["location"],
-            description=form.data["description"],
-            image_url=form.data["imageUrl"],
-        )
+        if 'image_url' not in request.files:
+            return jsonify({'errors': 'No file'}), 400
+
+        image_url = request.files['image_url']
+
+        if not allowed_file(image_url.filename):
+            return jsonify({'errors': 'File extension not allowed'}), 400
+
+        image_url.filename = get_unique_filename(image_url.filename)
+
+        upload = upload_file_to_s3(image_url)
+
+        if 'url' not in upload:
+            return upload, 400
+
+        url = upload['url']
+
+        new_listing = Listing(user_id=form.user_id.data, title=form.title.data, location=form.location.data, description=form.description.data, image_url=url)
+
         db.session.add(new_listing)
         db.session.commit()
         return new_listing.to_dict
@@ -48,17 +60,42 @@ def edit_listing(id):
     form = EditListing()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        listing = Listing.query.get(id)
-        listing.title= form.data["title"]
-        listing.location = form.data["location"]
-        listing.description = form.data["description"]
-        listing.image_url = form.data["imageUrl"]
-        current_time = date.today()
-        listing.updated_at = current_time
+
+        if 'image_url' in request.files:
+            image_url = request.files['image_url']
+
+            if not allowed_file(image_url.filename):
+                return jsonify({'errors': 'File extension not allowed'}), 400
+
+            image_url.filename = get_unique_filename(image_url.filename)
+
+            upload = upload_file_to_s3(image_url)
+
+            if 'url' not in upload:
+                return upload, 400
+
+            url = upload['url']
+
+            listing = Listing.query.get(id)
+            listing.title = form.title.data
+            listing.location = form.location.data
+            listing.description = form.description.data
+            current_time = date.today()
+            listing.updated_at = current_time
+            listing.image_url = url
+        else:
+            listing = Listing.query.get(id)
+            listing.title = form.title.data
+            listing.location = form.location.data
+            listing.description = form.description.data
+            current_time = date.today()
+            listing.updated_at = current_time
 
         db.session.add(listing)
         db.session.commit()
         return listing.to_dict
+    else:
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 @listing_routes.route("/<int:id>", methods=['DELETE'])
 def delete_listing(id):

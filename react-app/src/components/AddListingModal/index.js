@@ -141,9 +141,12 @@ function AddListingModal() {
                 Submit Listing
               </button>
               {imageLoading && (
-                <span className="wrapper">
-                  <i className="spinner"></i>
-                </span>
+                <div className="listing-loading">
+                  <span className="wrapper">
+                    <i className="spinner"></i>
+                  </span>
+                  <h3>Loading...</h3>
+                </div>
               )}
             </form>
           </div>

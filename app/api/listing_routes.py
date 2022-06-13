@@ -61,30 +61,35 @@ def edit_listing(id):
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
 
-        if 'image_url' not in request.files:
-            return jsonify({'errors': 'No file'}), 400
+        if 'image_url' in request.files:
+            image_url = request.files['image_url']
 
-        image_url = request.files['image_url']
+            if not allowed_file(image_url.filename):
+                return jsonify({'errors': 'File extension not allowed'}), 400
 
-        if not allowed_file(image_url.filename):
-            return jsonify({'errors': 'File extension not allowed'}), 400
+            image_url.filename = get_unique_filename(image_url.filename)
 
-        image_url.filename = get_unique_filename(image_url.filename)
+            upload = upload_file_to_s3(image_url)
 
-        upload = upload_file_to_s3(image_url)
+            if 'url' not in upload:
+                return upload, 400
 
-        if 'url' not in upload:
-            return upload, 400
+            url = upload['url']
 
-        url = upload['url']
-
-        listing = Listing.query.get(id)
-        listing.title = form.title.data
-        listing.location = form.location.data
-        listing.description = form.description.data
-        listing.image_url = url
-        current_time = date.today()
-        listing.updated_at = current_time
+            listing = Listing.query.get(id)
+            listing.title = form.title.data
+            listing.location = form.location.data
+            listing.description = form.description.data
+            current_time = date.today()
+            listing.updated_at = current_time
+            listing.image_url = url
+        else:
+            listing = Listing.query.get(id)
+            listing.title = form.title.data
+            listing.location = form.location.data
+            listing.description = form.description.data
+            current_time = date.today()
+            listing.updated_at = current_time
 
         db.session.add(listing)
         db.session.commit()

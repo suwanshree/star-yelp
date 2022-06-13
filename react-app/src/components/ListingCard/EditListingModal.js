@@ -8,7 +8,7 @@ function EditListingModal({ hideModal, listing }) {
   const [title, setTitle] = useState(listing.title);
   const [location, setLocation] = useState(listing.location);
   const [description, setDescription] = useState(listing.description);
-  const [image_url, setImage] = useState(listing.imageUrl);
+  const [image_url, setImage] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -34,10 +34,12 @@ function EditListingModal({ hideModal, listing }) {
     if (image_url?.size > 2000000) {
       errors.push("Image size must be less than 2 MB.");
     }
-    if (!fileTypes.includes(image_url?.name?.split(".").pop())) {
-      errors.push(
-        "Image not provided / file type not supported. Use: png, jpg, jpeg, gif, or webp"
-      );
+    if (image_url) {
+      if (!fileTypes.includes(image_url?.name?.split(".").pop())) {
+        errors.push(
+          "Image not provided / file type not supported. Use: png, jpg, jpeg, gif, or webp"
+        );
+      }
     }
     setErrors(errors);
   }, [title, location, description, image_url]);
@@ -46,12 +48,6 @@ function EditListingModal({ hideModal, listing }) {
     setHasSubmitted(true);
 
     if (errors.length > 0) return;
-
-    // const editedListingData = listing;
-    // editedListingData.title = title;
-    // editedListingData.location = location;
-    // editedListingData.description = description;
-    // editedListingData.image_url = image_url;
 
     const editedListingData = {
       id,
@@ -69,7 +65,7 @@ function EditListingModal({ hideModal, listing }) {
         setImageLoading(false);
         setErrors([]);
         setHasSubmitted(false);
-        hideModal()
+        hideModal();
       })
       .catch(async (res) => {
         const data = await res.json();
@@ -140,9 +136,12 @@ function EditListingModal({ hideModal, listing }) {
           </button>
         </div>
         {imageLoading && (
-          <span className="wrapper">
-            <i className="spinner"></i>
-          </span>
+          <div className="listing-loading">
+            <span className="wrapper">
+              <i className="spinner"></i>
+            </span>
+            <h3>Loading...</h3>
+          </div>
         )}
       </form>
     </div>

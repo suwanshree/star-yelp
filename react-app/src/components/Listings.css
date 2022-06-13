@@ -618,3 +618,14 @@ textarea {
 .spinner {
 	margin: auto;
 }
+
+.listing-loading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.listing-loading h3 {
+  margin-left: 10px;
+  padding-top: 18px;
+}

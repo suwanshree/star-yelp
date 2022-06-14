@@ -445,8 +445,7 @@ body {
   transform-origin: 50% 65%;
   transition: transform 5s, filter 3s ease-in-out;
   filter: brightness(1);
-  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-  animation: border-animate 6s ease-in-out infinite;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .card-image:hover {
@@ -718,8 +717,6 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: 1px solid rgb(139, 196, 209);
   -webkit-text-fill-color: rgb(139, 196, 209);
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-  box-shadow: 0 0 0px 1000px #000 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -732,8 +729,6 @@ select:hover,
 select:focus {
   border: 1px solid rgb(139, 196, 209);
   -webkit-text-fill-color: rgb(139, 196, 209);
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
-  box-shadow: 0 0 0px 1000px #000 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 

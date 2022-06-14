@@ -123,35 +123,15 @@
   justify-content: flex-start;
   padding: 10px;
   border-radius: 3px;
-  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-  animation: border-animate 6s ease-in-out infinite;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes border-animate {
-  20% {
-    opacity: 1;
-    -webkit-box-shadow: 0 0 1px 2px #03e9f4, 0 0 16px #03e9f4;
-    -moz-box-shadow: 0 0 1px 2px #03e9f4, 0 0 16px #03e9f4;
-    box-shadow: 0 0 1px 2px #03e9f4, 0 0 16px #03e9f4;
+@keyframes glow {
+  from {
+    box-shadow: 0 0 3px #03e9f4;
   }
-  40% {
-    opacity: 1;
-    -webkit-box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-    -moz-box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-    box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-  }
-  60% {
-    opacity: 1;
-    -webkit-box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-    -moz-box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-    box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-  }
-
-  80% {
-    opacity: 1;
-    -webkit-box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-    -moz-box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-    box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+  to {
+    box-shadow: 0 0 5px #03e9f4, 0 0 10px #03e9f4;
   }
 }
 

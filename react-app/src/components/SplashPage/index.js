@@ -4,6 +4,7 @@ import food from "../../images/food.png";
 import hospital from "../../images/hospital.png";
 import store from "../../images/store.png";
 import weapons from "../../images/weapons.png";
+import Footer from '../Footer';
 
 function SplashPage() {
   const [title, setTitle] = useState("Star Yelp | Home");
@@ -76,6 +77,7 @@ function SplashPage() {
         <div className="shooting_star"></div>
         <div className="shooting_star"></div>
       </div>
+      <Footer />
     </>
   );
 }

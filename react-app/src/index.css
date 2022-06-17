@@ -988,3 +988,27 @@ select:focus {
       shooting 3000ms ease-in-out infinite;
   }
 }
+
+/* footer */
+
+.footer-div {
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgb(158, 223, 237);
+}
+
+.technologies i{
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 16pt;
+}
+
+.owner {
+  font-family: "Roboto Slab", serif;
+  margin-top: 5px;
+  font-size: 11pt;
+}

@@ -46,7 +46,7 @@ function SearchResults() {
           onChange={(e) => setCurrentSearch(e.target.value)}
           type="text"
           className="search-input"
-          placeholder="Search Listings..."
+          placeholder="Search Listings by Title..."
           value={currentSearch}
         />
         <button className="search-submit" type="submit">

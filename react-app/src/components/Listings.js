@@ -52,7 +52,7 @@ function Listings() {
           onChange={(e) => setCurrentSearch(e.target.value)}
           type="text"
           className="search-input"
-          placeholder="Search Listings..."
+          placeholder="Search Listings by Title..."
         />
         <button className="search-submit" type="submit">
           <i className="fa-solid fa-magnifying-glass"></i>

@@ -30,13 +30,14 @@ const deleteListing = (id) => {
 // THUNKS
 
 export const newListing = (newListing) => async (dispatch) => {
-  const { user_id, title, location, description, image_url } = newListing;
+  const { user_id, title, location, category, description, image_url } = newListing;
 
   const formData = new FormData();
 
   formData.append("user_id", user_id);
   formData.append("title", title);
   formData.append("location", location);
+  formData.append("category", category);
   formData.append("description", description);
 
   if (image_url) {
@@ -66,12 +67,13 @@ export const loadAllListings = () => async (dispatch) => {
 };
 
 export const editListing = (editedListing) => async (dispatch) => {
-  const { id, title, location, description, image_url } = editedListing;
+  const { id, title, location, category, description, image_url } = editedListing;
 
   const formData = new FormData();
 
   formData.append("title", title);
   formData.append("location", location);
+  formData.append("category", category);
   formData.append("description", description);
 
   if (image_url) {

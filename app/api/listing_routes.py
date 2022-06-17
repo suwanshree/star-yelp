@@ -39,7 +39,7 @@ def listings():
 
         url = upload['url']
 
-        new_listing = Listing(user_id=form.user_id.data, title=form.title.data, location=form.location.data, description=form.description.data, image_url=url)
+        new_listing = Listing(user_id=form.user_id.data, title=form.title.data, location=form.location.data, category=form.category.data, description=form.description.data, image_url=url)
 
         db.session.add(new_listing)
         db.session.commit()
@@ -79,6 +79,7 @@ def edit_listing(id):
             listing = Listing.query.get(id)
             listing.title = form.title.data
             listing.location = form.location.data
+            listing.category = form.category.data,
             listing.description = form.description.data
             current_time = date.today()
             listing.updated_at = current_time

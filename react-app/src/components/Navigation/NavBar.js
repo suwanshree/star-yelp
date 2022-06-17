@@ -17,15 +17,15 @@ const NavBar = () => {
     sessionLinks = (
       <ul className="logged-in-nav">
         <li className="listings-button" id="nav-buttons">
-          <About />
+          <NavLink to="/listings" exact={true} className="listings">
+            Listings
+          </NavLink>
         </li>
         <li className="listings-button" id="nav-buttons">
           <AddListingModal />
         </li>
         <li className="listings-button" id="nav-buttons">
-          <NavLink to="/listings" exact={true} className="listings">
-            Listings
-          </NavLink>
+          <About />
         </li>
         <li className="listings-button" id="nav-buttons">
           <Profile />
@@ -36,16 +36,16 @@ const NavBar = () => {
     sessionLinks = (
       <ul className="logged-out-nav">
         <li className="listings-button" id="nav-buttons">
-          <About />
-        </li>
-        <li className="listings-button" id="nav-buttons">
-          <DemoButton />
-        </li>
-        <li className="listings-button" id="nav-buttons">
           <LoginModal />
         </li>
         <li className="listings-button" id="nav-buttons">
           <SignupModal />
+        </li>
+        <li className="listings-button" id="nav-buttons">
+          <About />
+        </li>
+        <li className="listings-button" id="nav-buttons">
+          <DemoButton />
         </li>
       </ul>
     );

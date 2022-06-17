@@ -40,7 +40,7 @@ function Profile() {
                 <strong>Email:</strong> {user.email}
               </li>
               <li id="profile-listing">
-                <NavLink to="/profile" exact={true}>
+                <NavLink to="/profile" exact={true} onClick={() => setShowModal(false)}>
                   Listings
                 </NavLink>
               </li>

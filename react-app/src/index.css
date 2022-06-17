@@ -399,7 +399,7 @@ body {
   color: rgb(98, 149, 160);
   font-size: 26pt;
   text-align: center;
-  padding-top: 200px;
+  padding-top: 160px;
   font-family: "Roboto Slab", serif;
 }
 
@@ -407,7 +407,7 @@ body {
   color: rgb(141, 179, 187);
   font-size: 16pt;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 40px;
   font-family: "Roboto Slab", serif;
 }
 
@@ -419,7 +419,7 @@ body {
 
 .businesses {
   display: flex;
-  margin-top: 70px;
+  margin-top: 50px;
   flex-direction: row;
   justify-content: center;
 }
@@ -987,4 +987,28 @@ select:focus {
     animation: tail 3000ms ease-in-out infinite,
       shooting 3000ms ease-in-out infinite;
   }
+}
+
+/* footer */
+
+.footer-div {
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgb(158, 223, 237);
+}
+
+.technologies i{
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 16pt;
+}
+
+.owner {
+  font-family: "Roboto Slab", serif;
+  margin-top: 5px;
+  font-size: 11pt;
 }

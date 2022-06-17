@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as listingActions from "../../store/listing";
@@ -14,6 +14,11 @@ function Profile() {
   const filteredListings = listings.filter(
     (listing) => listing.userId === sessionUser.id
   );
+  const [title, setTitle] = useState(`Star Yelp | ${sessionUser.username}`);
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   useEffect(() => {
     if (!sessionUser) history.push("/");

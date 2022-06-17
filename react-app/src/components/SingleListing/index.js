@@ -16,6 +16,11 @@ function SingleListing() {
   const sessionUser = useSelector((state) => state.session.user);
   const reviewsObj = useSelector((state) => state.reviews);
   const reviews = Object.values(reviewsObj);
+  const [title, setTitle] = useState(`Star Yelp | ${listing?.title}`);
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   useEffect(() => {
     if (!sessionUser) history.push("/");

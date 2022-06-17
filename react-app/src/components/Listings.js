@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as listingActions from "../store/listing";
@@ -14,6 +14,11 @@ function Listings() {
   const listingsObj = useSelector((state) => state.listings);
   const { setCurrentSearch } = useContext(SearchContext);
   const listings = Object.values(listingsObj);
+  const [title, setTitle] = useState("Star Yelp | Listings");
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   useEffect(() => {
     if (!sessionUser) history.push("/");
@@ -47,7 +52,7 @@ function Listings() {
           onChange={(e) => setCurrentSearch(e.target.value)}
           type="text"
           className="search-input"
-          placeholder="Search Listings..."
+          placeholder="Search Listings by Title..."
         />
         <button className="search-submit" type="submit">
           <i className="fa-solid fa-magnifying-glass"></i>

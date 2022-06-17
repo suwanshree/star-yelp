@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import * as listingActions from "../store/listing";
 import BackToTop from "./BackToTop";
 import ListingCard from "./ListingCard";
+import Categories from "./Categories";
 import { SearchContext } from '../context/Search';
 import "./Listings.css";
 
@@ -68,6 +69,7 @@ function Listings() {
             ))}
       </div>
       <h2 id="listing-title">End of All listings</h2>
+      <Categories />
       <BackToTop />
     </div>
   );

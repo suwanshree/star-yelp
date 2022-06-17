@@ -120,7 +120,7 @@ function EditListingModal({ hideModal, listing }) {
           value={description}
           rows={5}
         />
-        <label className="listing-label">Upload Image *</label>
+        <label className="listing-label">Update Image</label>
         <input
           type="file"
           className="file-input"

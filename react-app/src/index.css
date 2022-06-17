@@ -989,6 +989,92 @@ select:focus {
   }
 }
 
+.intro {
+  position: absolute;
+  top: 30%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  font-size: 45px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Categories */
+
+.menu {
+  font-weight: 100;
+  background: transparent;
+  width: 240px;
+  margin-top: 60px;
+  height: 60%;
+  padding-right: 50px;
+  position: fixed;
+  z-index: 100;
+  left: -150px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  animation: glow 2s ease-in-out infinite alternate;
+  color: rgb(158, 223, 237);
+  border-radius: 3px;
+}
+
+.menu:hover,
+.menu:focus {
+  transform: translate3d(140px, 0, 0);
+  animation-timing-function: 1s ease-in;
+}
+
+.menu .title {
+  top: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 25px;
+  font-size: 50pt;
+}
+
+.menu .nav {
+  position: absolute;
+  margin-left: 25px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.menu .nav li {
+  padding-bottom: 30px;
+  list-style-type: none;
+}
+
+.menu .nav li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+.menu .nav .top {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 2px;
+  color: rgb(77, 210, 234);
+  font-size: 18pt;
+}
+
 /* footer */
 
 .footer-div {
@@ -1001,7 +1087,7 @@ select:focus {
   color: rgb(158, 223, 237);
 }
 
-.technologies i{
+.technologies i {
   margin-right: 5px;
   margin-left: 5px;
   font-size: 16pt;

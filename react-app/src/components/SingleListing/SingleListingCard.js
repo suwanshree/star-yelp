@@ -103,7 +103,7 @@ function SingleListingCard({ listing, reviews, listingId }) {
           </div>
         </div>
         <div className="listing-page-description">
-          <h2 id="listing-page-location">Hours: Monnday - Sunday 24 / 7</h2>
+          <h2 id="listing-page-location">Hours: Monday - Sunday 24 / 7</h2>
           <h2 id="listing-page-description">{listing?.description}</h2>
         </div>
       </div>

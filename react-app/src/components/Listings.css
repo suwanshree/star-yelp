@@ -448,6 +448,18 @@ textarea {
   resize: none;
 }
 
+.add-review-button {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #78d3d8;
+  box-shadow: 0 0 2px #77e2e8, 0 0 4px #03e9f4;
+}
+
+.add-review-button:hover {
+  backdrop-filter: blur(1px);
+  box-shadow: 0 0 3px #77e2e8, 0 0 6px #03e9f4;
+}
+
 /* Delete modals */
 
 .delete-listing-modal {

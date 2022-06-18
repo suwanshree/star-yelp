@@ -20,12 +20,20 @@ function Listings() {
   const [retailChecked, setRetailChecked] = useState(false);
   const [medicalChecked, setMedicalChecked] = useState(false);
   const [miscChecked, setMiscChecked] = useState(false);
-  const [numState, setNumState] = useState(0);
+  const [numState, setNumState] = useState(0); // make an array and add then double for loop for 2 array comparison
   const listings = Object.values(listingsObj);
   const [title, setTitle] = useState("Star Yelp | Listings");
   let filteredListings = listings.filter((listing) => {
-    if (numState === 0) return listing;
-    else return listing.category === numState;
+    if (!numState.length) return listing;
+    else return numState[listing.category];
+    // else {
+    //   for (let num in numState) {
+    //     console.log(listing.category);
+    //     console.log(num);
+    //     console.log(listing.category === num);
+    //     return listing.category === num;
+    //   }
+    // }
   });
 
   useEffect(() => {
@@ -54,11 +62,12 @@ function Listings() {
   };
 
   const handleRestChange = (boolean) => {
-    if (boolean === true) setRestChecked(false);
-    else if (boolean === false) {
+    if (boolean === true) {
+      setRestChecked(false)
+    } else if (boolean === false) {
       setRestChecked(true);
       setAllChecked(false);
-      setNumState(1);
+      setNumState((numState) => numState.splice(0, 0, true));
     }
   };
 
@@ -67,7 +76,7 @@ function Listings() {
     else if (boolean === false) {
       setBarChecked(true);
       setAllChecked(false);
-      setNumState(2);
+      setNumState((numState) => numState.splice(1, 0, true));
     }
   };
 
@@ -76,7 +85,7 @@ function Listings() {
     else if (boolean === false) {
       setEquipChecked(true);
       setAllChecked(false);
-      setNumState(3);
+      setNumState((numState) => numState[3] = true);
     }
   };
 
@@ -85,7 +94,7 @@ function Listings() {
     else if (boolean === false) {
       setRetailChecked(true);
       setAllChecked(false);
-      setNumState(4);
+      setNumState((numState) => numState[4] = true);
     }
   };
 
@@ -94,7 +103,7 @@ function Listings() {
     else if (boolean === false) {
       setMedicalChecked(true);
       setAllChecked(false);
-      setNumState(5);
+      setNumState((numState) => numState[5] = true);
     }
   };
 
@@ -103,7 +112,7 @@ function Listings() {
     else if (boolean === false) {
       setMiscChecked(true);
       setAllChecked(false);
-      setNumState(6);
+      setNumState((numState) => numState[6] = true);
     }
   };
 
@@ -123,7 +132,7 @@ function Listings() {
         <div className="shooting_star"></div>
         <div className="shooting_star"></div>
       </div>
-      <h1 id="all-listings">All Listings</h1>
+      <h1 id="all-listings">Listings</h1>
       <form className="search-bar" onSubmit={onSearch}>
         <input
           onChange={(e) => setCurrentSearch(e.target.value)}
@@ -144,7 +153,7 @@ function Listings() {
               <ListingCard key={listing.id} listing={listing} />
             ))}
       </div>
-      <h2 id="listing-title">End of All listings</h2>
+      <h2 id="listing-title">End of Listings</h2>
       <div className="menu">
         <i className="title fa-solid fa-chevron-right"></i>
         <ul className="nav">

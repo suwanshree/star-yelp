@@ -32,7 +32,7 @@ def seed_listings():
         category=2,
         description="Your go to spot for all the fun in Levski. Visit us today for an unforgettable experience! Located in the Grand Barter Bazaar and owned by our very own Clair Rios, a lifelong resident of Levski.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879317/star-yelp/cafe-musian_lctagi.jpg",
-        rating=9,
+        rating=8,
         created_at=today,
         updated_at=today )
 
@@ -43,7 +43,7 @@ def seed_listings():
         category=2,
         description="Best views in ArcCorp coupled with the best drinks in the whole system. You will be back for more, ask a service member for our daily specials! Check you mobiglass for reservation times and details all at a special price.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879312/star-yelp/g-loc_yt2tw4.jpg",
-        rating=10,
+        rating=8,
         created_at=today,
         updated_at=today )
 
@@ -54,7 +54,7 @@ def seed_listings():
         category=6,
         description="For all your Reclamation & Disposal needs in Hurston. One stop for all your selling needs. We buy everything and do not ask any questions. Visit us today for a deal of a lifetime and do not forget to tell your friends.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879314/star-yelp/rec-desposal_dzulzu.jpg",
-        rating=7,
+        rating=4,
         created_at=today,
         updated_at=today )
 
@@ -65,7 +65,7 @@ def seed_listings():
         category=2,
         description="Best dive bar in the whole of Hurston. Offering drinks all day and night. Visit us to see why they call us the best hangout spot in Lorville, situated on the FO19 Production Quad near Reclamation & Disposal and Maria Pure of Heart.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879313/star-yelp/mnv-bar_f5tqb0.jpg",
-        rating=8,
+        rating=10,
         created_at=today,
         updated_at=today )
 
@@ -76,7 +76,7 @@ def seed_listings():
         category=2,
         description="The one and only place to hang out in grim Hex! Come join us for daily specials and ask for our group plans! Old '38 bar is located next to the elevators on the Main Concourse.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879313/star-yelp/old38_osgf5w.jpg",
-        rating=6,
+        rating=10,
         created_at=today,
         updated_at=today )
     
@@ -131,7 +131,7 @@ def seed_listings():
         category=5,
         description="Your location for the best care in Hurston. Call to today to check availability right from your mobiglass! Named in honour of Maria Wharton, mother of Chesterfield Hurston and matriarch of the Hurston family. The hospital's construction lasted from 2881 to 2889. Over 50,000 patients were admitted during our first year of operation.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879313/star-yelp/maria_ybfjss.webp",
-        rating=10,
+        rating=6,
         created_at=today,
         updated_at=today )
     
@@ -142,7 +142,7 @@ def seed_listings():
         category=4,
         description="Best of all the spaceships at the best prices and location. We have monthly specials and ship tours all day! We also sponsor several events such as 'Galactic Tour's Combat Ship of the Year' and Galactic Gear's TV episodes. Check your mobiglass for event schedules.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879310/star-yelp/astro-armada_u7oxkf.jpg",
-        rating=9,
+        rating=10,
         created_at=today,
         updated_at=today )
 
@@ -153,7 +153,7 @@ def seed_listings():
         category=4,
         description="Fast and easy rentals all day. Check out our daily specials! We are a ship and ground vehicle rental company at the Teasa Spaceport in Lorville on the planet Hurston with branch stores at space stations with Refinery Decks.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879319/star-yelp/vantage-rentals_evfcjy.png",
-        rating=7,
+        rating=6,
         created_at=today,
         updated_at=today )
 
@@ -186,7 +186,7 @@ def seed_listings():
         category=4,
         description="New Deal is one of the most reputed ship dealers in all of the known systems. Best prices for new and used ships everyday! We offer ground vehicles and spacecraft to suit a range of budgets, across a wide range of manufacturers. Our Teasa Spaceport dealership boasts internal and external show floors, allowing customers to explore a range of vehicles on display.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879313/star-yelp/new-deal_flsl7d.webp",
-        rating=8,
+        rating=6,
         created_at=today,
         updated_at=today )
     
@@ -197,7 +197,7 @@ def seed_listings():
         category=4,
         description="Best clothing at the best price and selection range. ArcCorp's best business rating certified! Casaba Outlet is a clothing-retail company founded by Jean Polanco and Joel Polanco. As of May 2951, Casaba operates 7 stores in the Stanton system.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879311/star-yelp/casaba-outlet_p6yjfm.webp",
-        rating=7,
+        rating=8,
         created_at=today,
         updated_at=today )
 
@@ -208,7 +208,7 @@ def seed_listings():
         category=3,
         description="Your one stop shop for all your spacefaring needs. Centermass always has your back! We are a Human spacecraft weapons and armor retailer with franchise stores in multiple locations across the United Empire of Earth (UEE). Founded as a weapons-only store, we added armor to our inventory in 2939.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879311/star-yelp/centermass_qrbil4.jpg",
-        rating=8,
+        rating=10,
         created_at=today,
         updated_at=today )
 
@@ -219,7 +219,7 @@ def seed_listings():
         category=3,
         description="Weapons, armor, under-suits and much much more! New deals everyday, grab our coupons from your residence! The store is owned and operated by Clor Vee, who worked hard to clear his name and sprung this business from the ground up all by himself!",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879311/star-yelp/cubby-blast_ygz0xa.webp",
-        rating=8,
+        rating=10,
         created_at=today,
         updated_at=today )
 
@@ -230,7 +230,7 @@ def seed_listings():
         category=3,
         description="All the ship parts you need at the best prices. We have daily deals for the best prices in ArcCorp! Dumper's Depot is a raw materials and used parts dealer. We advertise buying, among other things, salvage, ore, spacesuits, weapons and artifacts. We also supplies factories! The company was founded in 2894 by Burner Zeke.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879312/star-yelp/dumpers-depot_azdqkg.webp",
-        rating=7,
+        rating=8,
         created_at=today,
         updated_at=today )
 
@@ -241,7 +241,7 @@ def seed_listings():
         category=1,
         description="Rated top restaurant in Stanton system 5 times in a row. Come check out why they call us the best restaurant is the verse! Ellroy's is an eatery franchise. Our shops are in New Babbage's Commons area, and most Rest & Relax space stations.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879315/star-yelp/ellroys_gupsih.jpg",
-        rating=10,
+        rating=6,
         created_at=today,
         updated_at=today )
     
@@ -263,7 +263,7 @@ def seed_listings():
         category=1,
         description="Stop by to try our new line of nourishing sandwiches. Located at the heart of the Promenade we offer a wide range of sandwiches selected from across the 'verse for their taste.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879311/star-yelp/twyns-sandwiches_frzcgh.jpg",
-        rating=9,
+        rating=6,
         created_at=today,
         updated_at=today )
 
@@ -274,7 +274,7 @@ def seed_listings():
         category=5,
         description="Best views in the system coupled with the best health-care available anywhere in the known universe! Built upon a military-constructed latticework of inhabitable floating platforms used by Crusader Industries to manufacture their large-scale ships.",
         image_url="https://res.cloudinary.com/dn0ocfiva/image/upload/v1652879314/star-yelp/orison-general_tgw8m3.webp",
-        rating=10,
+        rating=6,
         created_at=today,
         updated_at=today )
 

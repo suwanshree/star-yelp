@@ -20,20 +20,12 @@ function Listings() {
   const [retailChecked, setRetailChecked] = useState(false);
   const [medicalChecked, setMedicalChecked] = useState(false);
   const [miscChecked, setMiscChecked] = useState(false);
-  const [numState, setNumState] = useState(0); // make an array and add then double for loop for 2 array comparison
+  const [numState, setNumState] = useState(0);
   const listings = Object.values(listingsObj);
   const [title, setTitle] = useState("Star Yelp | Listings");
-  let filteredListings = listings.filter((listing) => {
-    if (!numState.length) return listing;
-    else return numState[listing.category];
-    // else {
-    //   for (let num in numState) {
-    //     console.log(listing.category);
-    //     console.log(num);
-    //     console.log(listing.category === num);
-    //     return listing.category === num;
-    //   }
-    // }
+  const filteredListings = listings.filter((listing) => {
+    if (numState === 0) return listings;
+    return listing.category === numState;
   });
 
   useEffect(() => {
@@ -63,11 +55,16 @@ function Listings() {
 
   const handleRestChange = (boolean) => {
     if (boolean === true) {
-      setRestChecked(false)
+      setRestChecked(false);
     } else if (boolean === false) {
       setRestChecked(true);
       setAllChecked(false);
-      setNumState((numState) => numState.splice(0, 0, true));
+      setBarChecked(false);
+      setEquipChecked(false);
+      setRetailChecked(false);
+      setMedicalChecked(false);
+      setMiscChecked(false);
+      setNumState(1);
     }
   };
 
@@ -76,7 +73,12 @@ function Listings() {
     else if (boolean === false) {
       setBarChecked(true);
       setAllChecked(false);
-      setNumState((numState) => numState.splice(1, 0, true));
+      setEquipChecked(false);
+      setRetailChecked(false);
+      setMedicalChecked(false);
+      setMiscChecked(false);
+      setRestChecked(false);
+      setNumState(2);
     }
   };
 
@@ -85,7 +87,12 @@ function Listings() {
     else if (boolean === false) {
       setEquipChecked(true);
       setAllChecked(false);
-      setNumState((numState) => numState[3] = true);
+      setRetailChecked(false);
+      setMedicalChecked(false);
+      setMiscChecked(false);
+      setRestChecked(false);
+      setBarChecked(false);
+      setNumState(3);
     }
   };
 
@@ -94,7 +101,12 @@ function Listings() {
     else if (boolean === false) {
       setRetailChecked(true);
       setAllChecked(false);
-      setNumState((numState) => numState[4] = true);
+      setMedicalChecked(false);
+      setMiscChecked(false);
+      setRestChecked(false);
+      setBarChecked(false);
+      setEquipChecked(false);
+      setNumState(4);
     }
   };
 
@@ -103,7 +115,12 @@ function Listings() {
     else if (boolean === false) {
       setMedicalChecked(true);
       setAllChecked(false);
-      setNumState((numState) => numState[5] = true);
+      setRetailChecked(false);
+      setMiscChecked(false);
+      setRestChecked(false);
+      setBarChecked(false);
+      setEquipChecked(false);
+      setNumState(5);
     }
   };
 
@@ -112,7 +129,12 @@ function Listings() {
     else if (boolean === false) {
       setMiscChecked(true);
       setAllChecked(false);
-      setNumState((numState) => numState[6] = true);
+      setMedicalChecked(false);
+      setRetailChecked(false);
+      setRestChecked(false);
+      setBarChecked(false);
+      setEquipChecked(false);
+      setNumState(6);
     }
   };
 

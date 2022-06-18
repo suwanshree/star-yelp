@@ -1005,13 +1005,13 @@ select:focus {
 .menu {
   font-weight: 100;
   background: transparent;
-  width: 240px;
+  width: 260px;
   margin-top: 60px;
   height: 60%;
   padding-right: 50px;
   position: fixed;
   z-index: 100;
-  left: -150px;
+  left: -170px;
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   animation: glow 2s ease-in-out infinite alternate;
@@ -1038,7 +1038,7 @@ select:focus {
 
 .menu .nav {
   position: absolute;
-  margin-left: 25px;
+  margin-left: 36px;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -1072,7 +1072,48 @@ select:focus {
   font-family: "Staatliches", cursive;
   letter-spacing: 2px;
   color: rgb(77, 210, 234);
-  font-size: 18pt;
+  font-size: 16pt;
+  padding-left: 25px;
+}
+
+.check-box label {
+  color: rgb(158, 223, 237);;
+  font-size: 14pt;
+  padding-left: 10px;
+  font-family: "Roboto Slab", serif;
+}
+
+.check-box input {
+  -webkit-appearance: none;
+	background-color: rgb(185, 226, 234);
+	border: 1px solid rgb(185, 226, 234);
+	padding: 9px;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+}
+
+.check-box input:checked:after {
+	content: ' ';
+	width: 12px;
+	height: 12px;
+	border-radius: 50px;
+	position: absolute;
+	top: 3px;
+	background: rgb(0, 77, 91);
+	text-shadow: 0px;
+	left: 3px;
+	font-size: 32px;
+}
+
+.check-box input:checked {
+	background-color: rgb(185, 226, 234);
+	color: rgb(0, 77, 91);
+	border: 1px solid rgb(185, 226, 234);
+}
+
+.check-box input:active, .check-box input:checked:active {
+	box-shadow: 0 1px 2px rgb(0, 77, 91), inset 0px 1px 3px rgb(0, 77, 91);
 }
 
 /* footer */

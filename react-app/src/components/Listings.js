@@ -4,8 +4,7 @@ import { useHistory } from "react-router-dom";
 import * as listingActions from "../store/listing";
 import BackToTop from "./BackToTop";
 import ListingCard from "./ListingCard";
-import Categories from "./Categories";
-import { SearchContext } from '../context/Search';
+import { SearchContext } from "../context/Search";
 import "./Listings.css";
 
 function Listings() {
@@ -69,7 +68,40 @@ function Listings() {
             ))}
       </div>
       <h2 id="listing-title">End of All listings</h2>
-      <Categories />
+      <div className="menu">
+        <i className="title fa-solid fa-chevron-right"></i>
+        <ul className="nav">
+          <li className="top">CATEGORIES</li>
+          <li className="check-box">
+            <input type="checkbox" />
+            <label>All</label>
+          </li>
+          <li className="check-box">
+            <input type="checkbox" />
+            <label>Restaurants</label>
+          </li>
+          <li className="check-box">
+            <input type="checkbox" />
+            <label>Bars</label>
+          </li>
+          <li className="check-box">
+            <input type="checkbox" />
+            <label>Equipment</label>
+          </li>
+          <li className="check-box">
+            <input type="checkbox" />
+            <label>Retail</label>
+          </li>
+          <li className="check-box">
+            <input type="checkbox" />
+            <label>Medical</label>
+          </li>
+          <li className="check-box">
+            <input type="checkbox" />
+            <label>Misc.</label>
+          </li>
+        </ul>
+      </div>
       <BackToTop />
     </div>
   );

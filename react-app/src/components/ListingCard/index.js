@@ -60,6 +60,31 @@ function ListingCard({ listing }) {
     activeColor: "cyan",
   };
 
+  let category;
+  switch (listing?.category) {
+    case 1:
+      category = "Restaurant";
+      break;
+    case 2:
+      category = "Bar";
+      break;
+    case 3:
+      category = "Equipment";
+      break;
+    case 4:
+      category = "Retail";
+      break;
+    case 5:
+      category = "Medical";
+      break;
+    case 6:
+      category = "Misc.";
+      break;
+    default:
+      category = "None";
+      break;
+  }
+
   return (
     <div className="listing-container">
       <div className="listing-image">
@@ -81,7 +106,10 @@ function ListingCard({ listing }) {
         </NavLink>
       </div>
       <div className="listing-details">
-        <h2 id="listing-title">{listing?.title}</h2>
+        <div className="title-bar">
+          <h2 id="listing-title">{listing?.title}</h2>
+          <p id="listing-category">{category}</p>
+        </div>
         <h3 id="listing-location">{listing?.location}</h3>
         <ReactStars {...ratingStars} />
         <p id="listing-description">{listing?.description}</p>

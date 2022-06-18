@@ -229,12 +229,30 @@
   transition-delay: 0.75s;
 }
 
+.title-bar {
+  display: flex;
+  align-items: center;
+}
+
 #listing-title {
   font-family: "Roboto Slab", serif;
   color: rgb(185, 226, 234);
   font-size: 20pt;
   margin-bottom: 2px;
   text-shadow: 0 0 1px rgb(185, 226, 234);
+}
+
+#listing-category {
+  margin-left: 10px;
+  border-radius: 3px;
+  padding: 3px;
+  border: 1px solid #78d3d8;
+  color: rgb(139, 196, 209);
+  background-color: transparent;
+  box-shadow: 0 0 2px #77e2e8;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
 #listing-location {

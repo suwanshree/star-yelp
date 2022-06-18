@@ -40,6 +40,11 @@
   margin: 100px;
 }
 
+.listing-title-bar {
+  display: flex;
+  flex-direction: column;
+}
+
 #listing-page-title {
   font-family: "Staatliches", cursive;
   color: rgb(170, 228, 240);
@@ -47,6 +52,19 @@
   margin-bottom: 2px;
   letter-spacing: 4px;
   text-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+
+#listing-page-category {
+  border-radius: 3px;
+  padding: 3px;
+  border: 1px solid #78d3d8;
+  color: rgb(139, 196, 209);
+  background-color: #05191a;
+  box-shadow: 3px 3px 3px rgb(0, 0, 0);
+  font-family: "Staatliches", cursive;
+  letter-spacing: 2px;
+  width: fit-content;
+  font-size: 14pt;  
 }
 
 #listing-page-location {

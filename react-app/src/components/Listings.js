@@ -56,6 +56,8 @@ function Listings() {
   const handleRestChange = (boolean) => {
     if (boolean === true) {
       setRestChecked(false);
+      setAllChecked(true);
+      setNumState(0);
     } else if (boolean === false) {
       setRestChecked(true);
       setAllChecked(false);
@@ -69,8 +71,11 @@ function Listings() {
   };
 
   const handleBarChange = (boolean) => {
-    if (boolean === true) setBarChecked(false);
-    else if (boolean === false) {
+    if (boolean === true) {
+      setBarChecked(false);
+      setAllChecked(true);
+      setNumState(0);
+    } else if (boolean === false) {
       setBarChecked(true);
       setAllChecked(false);
       setEquipChecked(false);
@@ -83,8 +88,11 @@ function Listings() {
   };
 
   const handleEquipChange = (boolean) => {
-    if (boolean === true) setEquipChecked(false);
-    else if (boolean === false) {
+    if (boolean === true) {
+      setEquipChecked(false);
+      setAllChecked(true);
+      setNumState(0);
+    } else if (boolean === false) {
       setEquipChecked(true);
       setAllChecked(false);
       setRetailChecked(false);
@@ -97,8 +105,11 @@ function Listings() {
   };
 
   const handleRetailChange = (boolean) => {
-    if (boolean === true) setRetailChecked(false);
-    else if (boolean === false) {
+    if (boolean === true) {
+      setRetailChecked(false);
+      setAllChecked(true);
+      setNumState(0);
+    } else if (boolean === false) {
       setRetailChecked(true);
       setAllChecked(false);
       setMedicalChecked(false);
@@ -111,8 +122,11 @@ function Listings() {
   };
 
   const handleMedicalChange = (boolean) => {
-    if (boolean === true) setMedicalChecked(false);
-    else if (boolean === false) {
+    if (boolean === true) {
+      setMedicalChecked(false);
+      setAllChecked(true);
+      setNumState(0);
+    } else if (boolean === false) {
       setMedicalChecked(true);
       setAllChecked(false);
       setRetailChecked(false);
@@ -125,8 +139,11 @@ function Listings() {
   };
 
   const handleMiscChange = (boolean) => {
-    if (boolean === true) setMiscChecked(false);
-    else if (boolean === false) {
+    if (boolean === true) {
+      setMiscChecked(false);
+      setAllChecked(true);
+      setNumState(0);
+    } else if (boolean === false) {
       setMiscChecked(true);
       setAllChecked(false);
       setMedicalChecked(false);

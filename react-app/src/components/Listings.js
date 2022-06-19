@@ -13,19 +13,40 @@ function Listings() {
   const sessionUser = useSelector((state) => state.session.user);
   const listingsObj = useSelector((state) => state.listings);
   const { setCurrentSearch } = useContext(SearchContext);
-  const [allChecked, setAllChecked] = useState(true);
-  const [restChecked, setRestChecked] = useState(false);
-  const [barChecked, setBarChecked] = useState(false);
-  const [equipChecked, setEquipChecked] = useState(false);
-  const [retailChecked, setRetailChecked] = useState(false);
-  const [medicalChecked, setMedicalChecked] = useState(false);
-  const [miscChecked, setMiscChecked] = useState(false);
-  const [numState, setNumState] = useState(0);
   const listings = Object.values(listingsObj);
   const [title, setTitle] = useState("Star Yelp | Listings");
-  const filteredListings = listings.filter((listing) => {
-    if (numState === 0) return listings;
-    return listing.category === numState;
+  const initialState = [true, false, false, false, false, false, false];
+  const [checkList, setCheckList] = useState(initialState);
+
+  const handleCheckbox = (checkBoxId) => {
+    setCheckList((prevState) => {
+      if (checkBoxId === 0) {
+        return initialState;
+      }
+      let checker = true;
+      let checkBoxIdState = true;
+      for (let i = 1; i < checkList.length; i++) {
+        if (checkBoxId === i) {
+          checkBoxIdState = !checkList[i];
+        } else if (checkList[i]) {
+          checker = false;
+        }
+      }
+      if (!checkBoxIdState && checker) {
+        return initialState;
+      }
+      return [
+        false,
+        ...prevState.slice(1, checkBoxId),
+        !prevState[checkBoxId],
+        ...prevState.slice(checkBoxId + 1),
+      ];
+    });
+  };
+
+  const filteredListings = listings.filter((list) => {
+    if (checkList[0]) return listings;
+    return checkList[list.category];
   });
 
   useEffect(() => {
@@ -40,119 +61,6 @@ function Listings() {
   const onSearch = async (e) => {
     e.preventDefault();
     history.push("/results");
-  };
-
-  const handleAllChange = () => {
-    setAllChecked(true);
-    setRestChecked(false);
-    setBarChecked(false);
-    setEquipChecked(false);
-    setRetailChecked(false);
-    setMedicalChecked(false);
-    setMiscChecked(false);
-    setNumState(0);
-  };
-
-  const handleRestChange = (boolean) => {
-    if (boolean === true) {
-      setRestChecked(false);
-      setAllChecked(true);
-      setNumState(0);
-    } else if (boolean === false) {
-      setRestChecked(true);
-      setAllChecked(false);
-      setBarChecked(false);
-      setEquipChecked(false);
-      setRetailChecked(false);
-      setMedicalChecked(false);
-      setMiscChecked(false);
-      setNumState(1);
-    }
-  };
-
-  const handleBarChange = (boolean) => {
-    if (boolean === true) {
-      setBarChecked(false);
-      setAllChecked(true);
-      setNumState(0);
-    } else if (boolean === false) {
-      setBarChecked(true);
-      setAllChecked(false);
-      setEquipChecked(false);
-      setRetailChecked(false);
-      setMedicalChecked(false);
-      setMiscChecked(false);
-      setRestChecked(false);
-      setNumState(2);
-    }
-  };
-
-  const handleEquipChange = (boolean) => {
-    if (boolean === true) {
-      setEquipChecked(false);
-      setAllChecked(true);
-      setNumState(0);
-    } else if (boolean === false) {
-      setEquipChecked(true);
-      setAllChecked(false);
-      setRetailChecked(false);
-      setMedicalChecked(false);
-      setMiscChecked(false);
-      setRestChecked(false);
-      setBarChecked(false);
-      setNumState(3);
-    }
-  };
-
-  const handleRetailChange = (boolean) => {
-    if (boolean === true) {
-      setRetailChecked(false);
-      setAllChecked(true);
-      setNumState(0);
-    } else if (boolean === false) {
-      setRetailChecked(true);
-      setAllChecked(false);
-      setMedicalChecked(false);
-      setMiscChecked(false);
-      setRestChecked(false);
-      setBarChecked(false);
-      setEquipChecked(false);
-      setNumState(4);
-    }
-  };
-
-  const handleMedicalChange = (boolean) => {
-    if (boolean === true) {
-      setMedicalChecked(false);
-      setAllChecked(true);
-      setNumState(0);
-    } else if (boolean === false) {
-      setMedicalChecked(true);
-      setAllChecked(false);
-      setRetailChecked(false);
-      setMiscChecked(false);
-      setRestChecked(false);
-      setBarChecked(false);
-      setEquipChecked(false);
-      setNumState(5);
-    }
-  };
-
-  const handleMiscChange = (boolean) => {
-    if (boolean === true) {
-      setMiscChecked(false);
-      setAllChecked(true);
-      setNumState(0);
-    } else if (boolean === false) {
-      setMiscChecked(true);
-      setAllChecked(false);
-      setMedicalChecked(false);
-      setRetailChecked(false);
-      setRestChecked(false);
-      setBarChecked(false);
-      setEquipChecked(false);
-      setNumState(6);
-    }
   };
 
   return (
@@ -200,56 +108,56 @@ function Listings() {
           <li className="check-box">
             <input
               type="checkbox"
-              checked={allChecked}
-              onChange={() => handleAllChange()}
+              checked={checkList[0]}
+              onChange={() => handleCheckbox(0)}
             />
             <label>All</label>
           </li>
           <li className="check-box">
             <input
               type="checkbox"
-              checked={restChecked}
-              onChange={() => handleRestChange(restChecked)}
+              checked={checkList[1]}
+              onChange={() => handleCheckbox(1)}
             />
             <label>Restaurants</label>
           </li>
           <li className="check-box">
             <input
               type="checkbox"
-              checked={barChecked}
-              onChange={() => handleBarChange(barChecked)}
+              checked={checkList[2]}
+              onChange={() => handleCheckbox(2)}
             />
             <label>Bars</label>
           </li>
           <li className="check-box">
             <input
               type="checkbox"
-              checked={equipChecked}
-              onChange={() => handleEquipChange(equipChecked)}
+              checked={checkList[3]}
+              onChange={() => handleCheckbox(3)}
             />
             <label>Equipment</label>
           </li>
           <li className="check-box">
             <input
               type="checkbox"
-              checked={retailChecked}
-              onChange={() => handleRetailChange(retailChecked)}
+              checked={checkList[4]}
+              onChange={() => handleCheckbox(4)}
             />
             <label>Retail</label>
           </li>
           <li className="check-box">
             <input
               type="checkbox"
-              checked={medicalChecked}
-              onChange={() => handleMedicalChange(medicalChecked)}
+              checked={checkList[5]}
+              onChange={() => handleCheckbox(5)}
             />
             <label>Medical</label>
           </li>
           <li className="check-box">
             <input
               type="checkbox"
-              checked={miscChecked}
-              onChange={() => handleMiscChange(miscChecked)}
+              checked={checkList[6]}
+              onChange={() => handleCheckbox(6)}
             />
             <label>Misc.</label>
           </li>

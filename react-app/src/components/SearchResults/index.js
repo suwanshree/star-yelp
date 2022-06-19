@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as listingActions from "../../store/listing";
@@ -16,6 +16,11 @@ function SearchResults() {
   const filteredListings = listings.filter((listing) =>
     listing.title.toLowerCase().includes(currentSearch.toLowerCase())
   );
+  const [title, setTitle] = useState(`Star Yelp | Search`);
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   useEffect(() => {
     if (!sessionUser) history.push("/");

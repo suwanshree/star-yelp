@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from ..forms import NewReview, EditReview, EditRating
+from ..forms import NewReview, EditReview
 from ..models import db, Review, Listing
 from datetime import date
 

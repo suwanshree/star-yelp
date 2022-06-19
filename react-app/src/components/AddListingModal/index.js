@@ -13,6 +13,7 @@ function AddListingModal() {
   const [user_id, setUserId] = useState(sessionUser?.id);
   const [title, setTitle] = useState("");
   const [location, setLocation] = useState("");
+  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [image_url, setImage] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
@@ -32,6 +33,7 @@ function AddListingModal() {
       errors.push("Location field needs minimum 3 characters.");
     if (location.length > 100)
       errors.push("Location field cannot exceed 100 characters.");
+    if (!category.length || category.length > 1) errors.push("Please select a category.");
     if (!description.length) errors.push("Description field cannot be empty.");
     if (description.length < 20)
       errors.push("Description field needs minimum 20 characters.");
@@ -46,7 +48,7 @@ function AddListingModal() {
       );
     }
     setErrors(errors);
-  }, [title, location, description, image_url]);
+  }, [title, location, category, description, image_url]);
 
   const submitListing = () => {
     setHasSubmitted(true);
@@ -57,6 +59,7 @@ function AddListingModal() {
       user_id,
       title,
       location,
+      category,
       description,
       image_url,
     };
@@ -67,6 +70,7 @@ function AddListingModal() {
       .then(() => {
         setTitle("");
         setLocation("");
+        setCategory("");
         setDescription("");
         setImage(null);
         setImageLoading(false);
@@ -74,6 +78,7 @@ function AddListingModal() {
         setHasSubmitted(false);
         setShowModal(false);
         history.push("/listings");
+        window.location.reload();
       })
       .catch(async (res) => {
         const data = await res.json();
@@ -122,6 +127,19 @@ function AddListingModal() {
                 placeholder="Enter a Location"
                 value={location}
               />
+              <label className="listing-label">Category *</label>
+              <select
+                className="select-label"
+                onChange={(e) => setCategory(e.target.value)}
+              >
+                <option value="select">Select</option>
+                <option value="1">Restaurant</option>
+                <option value="2">Bar</option>
+                <option value="3">Equipment</option>
+                <option value="4">Retail</option>
+                <option value="5">Medical</option>
+                <option value="6">Misc.</option>
+              </select>
               <label className="listing-label">Description *</label>
               <textarea
                 onChange={(e) => setDescription(e.target.value)}

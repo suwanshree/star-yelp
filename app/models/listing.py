@@ -8,6 +8,7 @@ class Listing(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     title = db.Column(db.String(255), nullable=False)
     location = db.Column(db.String(255), nullable=False)
+    category = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(5000), nullable=False)
     image_url = db.Column(db.String, nullable=False)
     rating = db.Column(db.Integer, nullable=True)
@@ -25,6 +26,7 @@ class Listing(db.Model):
             "userId": self.user_id,
             "title": self.title,
             "location": self.location,
+            "category": self.category,
             "description": self.description,
             "imageUrl": self.image_url,
             "rating": self.rating,

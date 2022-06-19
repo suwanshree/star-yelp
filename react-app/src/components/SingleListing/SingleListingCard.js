@@ -84,6 +84,31 @@ function SingleListingCard({ listing, reviews, listingId }) {
     activeColor: "gold",
   };
 
+  let category;
+  switch (listing?.category) {
+    case 1:
+      category = "Restaurant";
+      break;
+    case 2:
+      category = "Bar";
+      break;
+    case 3:
+      category = "Equipment";
+      break;
+    case 4:
+      category = "Retail";
+      break;
+    case 5:
+      category = "Medical";
+      break;
+    case 6:
+      category = "Misc.";
+      break;
+    default:
+      category = "None";
+      break;
+  }
+
   return (
     <div className="single-listing">
       <div className="inner-listing">
@@ -92,7 +117,10 @@ function SingleListingCard({ listing, reviews, listingId }) {
           style={{ backgroundImage: `url(${listing?.imageUrl})` }}
         >
           <div className="listing-box">
-            <h1 id="listing-page-title">{listing?.title}</h1>
+            <div className="listing-title-bar">
+              <h1 id="listing-page-title">{listing?.title}</h1>
+              <p id="listing-page-category">{category}</p>
+            </div>
             <h2 id="listing-page-location">{listing?.location}</h2>
             <div className="ratings-div">
               <ReactStars {...ratingStars} />

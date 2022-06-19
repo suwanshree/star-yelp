@@ -77,8 +77,8 @@ function AddReviewModal({ listingId }) {
   
   return (
     <>
-      <button className="add-listing-button" onClick={() => setShowModal(true)}>
-        Add Review
+      <button className="add-review-button" onClick={() => setShowModal(true)}>
+        <i className="fa-solid fa-pen-clip"></i> Add Review
       </button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>

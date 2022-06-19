@@ -78,6 +78,7 @@ function AddListingModal() {
         setHasSubmitted(false);
         setShowModal(false);
         history.push("/listings");
+        window.location.reload();
       })
       .catch(async (res) => {
         const data = await res.json();

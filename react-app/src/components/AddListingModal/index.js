@@ -33,7 +33,7 @@ function AddListingModal() {
       errors.push("Location field needs minimum 3 characters.");
     if (location.length > 100)
       errors.push("Location field cannot exceed 100 characters.");
-    if (!category.length) errors.push("Please select a category.");
+    if (!category.length || category.length > 1) errors.push("Please select a category.");
     if (!description.length) errors.push("Description field cannot be empty.");
     if (description.length < 20)
       errors.push("Description field needs minimum 20 characters.");
@@ -128,12 +128,15 @@ function AddListingModal() {
                 value={location}
               />
               <label className="listing-label">Category *</label>
-              <select className="select-label" onChange={(e) => setCategory(e.target.value)}>
+              <select
+                className="select-label"
+                onChange={(e) => setCategory(e.target.value)}
+              >
                 <option value="select">Select</option>
                 <option value="1">Restaurant</option>
                 <option value="2">Bar</option>
                 <option value="3">Equipment</option>
-                <option value="4">Retial</option>
+                <option value="4">Retail</option>
                 <option value="5">Medical</option>
                 <option value="6">Misc.</option>
               </select>

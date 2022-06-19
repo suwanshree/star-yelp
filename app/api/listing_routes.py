@@ -75,11 +75,11 @@ def edit_listing(id):
                 return upload, 400
 
             url = upload['url']
-
+            
             listing = Listing.query.get(id)
             listing.title = form.title.data
             listing.location = form.location.data
-            listing.category = form.category.data,
+            listing.category = form.category.data
             listing.description = form.description.data
             current_time = date.today()
             listing.updated_at = current_time
@@ -88,6 +88,7 @@ def edit_listing(id):
             listing = Listing.query.get(id)
             listing.title = form.title.data
             listing.location = form.location.data
+            listing.category = form.category.data
             listing.description = form.description.data
             current_time = date.today()
             listing.updated_at = current_time

@@ -7,6 +7,7 @@ function EditListingModal({ hideModal, listing }) {
   const [id, setId] = useState(listing.id);
   const [title, setTitle] = useState(listing.title);
   const [location, setLocation] = useState(listing.location);
+  const [category, setCategory] = useState(listing.category);
   const [description, setDescription] = useState(listing.description);
   const [image_url, setImage] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
@@ -42,7 +43,7 @@ function EditListingModal({ hideModal, listing }) {
       }
     }
     setErrors(errors);
-  }, [title, location, description, image_url]);
+  }, [title, location, category, description, image_url]);
 
   const submitListingEdits = () => {
     setHasSubmitted(true);
@@ -53,6 +54,7 @@ function EditListingModal({ hideModal, listing }) {
       id,
       title,
       location,
+      category,
       description,
       image_url,
     };
@@ -112,6 +114,19 @@ function EditListingModal({ hideModal, listing }) {
           placeholder={"Listing Location"}
           value={location}
         />
+        <label className="listing-label">Category *</label>
+        <select
+          className="select-label"
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+        >
+          <option value="1">Restaurant</option>
+          <option value="2">Bar</option>
+          <option value="3">Equipment</option>
+          <option value="4">Retail</option>
+          <option value="5">Medical</option>
+          <option value="6">Misc.</option>
+        </select>
         <label className="listing-label">Description *</label>
         <textarea
           onChange={(e) => setDescription(e.target.value)}

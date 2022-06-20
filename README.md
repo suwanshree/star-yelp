@@ -43,7 +43,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Star Yelp, a Yelp clone, is a business/service review website for users to share their listing information with other site users and also provide feedback in the form of reviews and ratings for listings posted by other users, all in the expansive world of the video game "Star Citizen". Users have the ability to edit and delete their listings after posting and they can also edit and delete their reviews/ratings. With Star Yelp, say goodbye to wasting precious quantum fuel jumping around the 'verse to meet your best needs, check the reviews and save time and energy!
+Star Yelp, a Yelp clone, is a business/service review website for users to share their listing information with other site users, and also provide feedback in the form of reviews and ratings for listings posted by other users, all in the expansive world of the video game "Star Citizen". Users have the ability to edit and delete their listings after posting, and they can also edit and delete their reviews/ratings. With Star Yelp, say goodbye to wasting precious quantum fuel jumping around the 'verse to meet your best needs, check the reviews then save time and energy!
 
 <img src="react-app/src/images/splashpage.png" width=auto height=auto>
 
@@ -128,12 +128,12 @@ The live site is hosted on Heroku using github docker containers.
  <img src="react-app/src/images/login.png" width=auto height=auto>
 
 
-* Once logged in, the user is directed to the listings page, where logged-in users can view a list of all the listings in the website.
+* Once logged in, the user is directed to the listings page, where logged-in users can view a list of all the listings in the website, search for a particular listing by title, and sort the listings by desired category.
 
  <img src="react-app/src/images/listingspage.png" width=auto height=auto>
 
 
-* Logged in users can create a new listing. It can also be edited and deleted.
+* Logged in users can create a new listing. It can also be edited and deleted. Users can also view their own listings in their profile page.
 
  <img src="react-app/src/images/newlisting.png" width=auto height=auto>
 
@@ -143,7 +143,7 @@ The live site is hosted on Heroku using github docker containers.
  <img src="react-app/src/images/singlelisting.png" width=auto height=auto>
 
 
-* Once in the single listing page logged in users can add their own review if it is not a listing owned by them. Here they can also edit and delete their own review. To be fair to listing owners, users have a limit of one review per listing.
+* Once in the single listing page, logged in users can add their own review, if it is not a listing owned by them. Here they can also edit and delete their own review. To be fair to listing owners, users have a limit of one review per listing.
 
  <img src="react-app/src/images/newreview.png" width=auto height=auto>
 
@@ -158,12 +158,12 @@ The live site is hosted on Heroku using github docker containers.
 
 ## Future Implementations
 
-* Search Feature - Users can search all listings by providing keywords through a search bar.
+* Search Feature - Users can search all listings by providing keywords through a search bar. ✅
 * Feedback - Users can provide feedback through a form that sends an email to the site administrator.
-* AWS Images - Users can upload multiple images for listings and reviews from their local machine.
+* AWS Images - Users can upload multiple images for listings and reviews from their local machine. ✅
 * O-Auth integration - Users can choose to login via their google accounts through O-Auth authentication.
-* Listing Categories - Listings have categories associated with them which users can filter the main listings page by.
-* Expanded User Profiles - User profiles are expanded to show all of the logged in user's listings and reviews in one place.
+* Listing Categories - Listings have categories associated with them which users can filter the main listings page by. ✅
+* Expanded User Profiles - User profiles are expanded to show all of the logged in user's listings in one place. ✅
 
 <!-- CONTACT -->
 ## Contact

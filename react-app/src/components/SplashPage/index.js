@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import bar from "../../images/bar.png";
-import food from "../../images/food.png";
-import hospital from "../../images/hospital.png";
-import store from "../../images/store.png";
-import weapons from "../../images/weapons.png";
-import Footer from '../Footer';
+import Footer from "../Footer";
+import browse from "../../images/browse.jpg";
+import filter from "../../images/filter.jpg";
+import list from "../../images/list.jpg";
+import review from "../../images/review.jpg";
+import reviews from "../../images/reviews.jpg";
 
 function SplashPage() {
   const [title, setTitle] = useState("Star Yelp | Home");
@@ -47,26 +47,23 @@ function SplashPage() {
         <div className="shooting_star"></div>
         <div className="shooting_star"></div>
       </div>
-      <div className="businesses">
-        <div className="cards">
-          <h3>Gear</h3>
-          <img src={weapons} alt="Weapons" className="card-image" />
-        </div>
-        <div className="cards">
-          <h3>Restaurants</h3>
-          <img src={food} alt="Food" className="card-image" />
-        </div>
-        <div className="cards">
-          <h3>Nightlife</h3>
-          <img src={bar} alt="Bar" className="card-image" />
-        </div>
-        <div className="cards">
-          <h3>Clothing</h3>
-          <img src={store} alt="Store" className="card-image" />
-        </div>
-        <div className="cards">
-          <h3>Health</h3>
-          <img src={hospital} alt="Hospital" className="card-image" />
+      <div id="slideshow">
+        <div className="slide-wrapper">
+          <div className="slide">
+            <img src={browse} alt="Browse Listings" className="card-image" />
+          </div>
+          <div className="slide">
+            <img src={filter} alt="Filter Listings" className="card-image" />
+          </div>
+          <div className="slide">
+            <img src={list} alt="Add your Listing" className="card-image" />
+          </div>
+          <div className="slide">
+            <img src={reviews} alt="View Reviews" className="card-image" />
+          </div>
+          <div className="slide">
+            <img src={review} alt="Add Review" className="card-image" />
+          </div>
         </div>
       </div>
       <div className="info2">

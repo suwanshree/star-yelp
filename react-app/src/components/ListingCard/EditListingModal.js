@@ -13,6 +13,7 @@ function EditListingModal({ hideModal, listing }) {
   const [imageLoading, setImageLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [disable, setDisable] = useState(false);
 
   useEffect(() => {
     let errors = [];
@@ -47,6 +48,7 @@ function EditListingModal({ hideModal, listing }) {
 
   const submitListingEdits = () => {
     setHasSubmitted(true);
+    setDisable(true);
 
     if (errors.length > 0) return;
 
@@ -143,7 +145,7 @@ function EditListingModal({ hideModal, listing }) {
           onChange={updateImage}
         />
         <div id="edit-listing-buttons">
-          <button id="listing-submit" type="submit">
+          <button id="listing-submit" type="submit" disabled={disable}>
             Update Listing
           </button>
           <button id="delete-button" onClick={handleCancelClick}>

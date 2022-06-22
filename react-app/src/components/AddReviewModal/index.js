@@ -17,6 +17,7 @@ function AddReviewModal({ listingId }) {
   const [rating, setRating] = useState(5);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [disable, setDisable] = useState(false);
 
   useEffect(() => {
     let errors = [];
@@ -38,6 +39,8 @@ function AddReviewModal({ listingId }) {
 
   const submitReview = () => {
     setHasSubmitted(true);
+    setDisable(true);
+
     if (errors.length > 0) return;
 
     const newReviewData = {};
@@ -113,7 +116,7 @@ function AddReviewModal({ listingId }) {
                 value={text}
                 rows={5}
               />
-              <button id="listing-submit" type="submit">
+              <button id="listing-submit" type="submit" disabled={disable}>
                 Submit Review
               </button>
             </form>

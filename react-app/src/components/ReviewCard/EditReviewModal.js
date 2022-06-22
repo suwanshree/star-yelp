@@ -10,6 +10,7 @@ function EditReviewModal({ hideModal, review }) {
   const [rating, setRating] = useState(review.rating);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [disable, setDisable] = useState(false);
 
   useEffect(() => {
     let errors = [];
@@ -31,7 +32,10 @@ function EditReviewModal({ hideModal, review }) {
 
   const submitReviewEdits = () => {
     setHasSubmitted(true);
+    setDisable(true);
+
     if (errors.length > 0) return;
+
     const editedReviewData = {};
     editedReviewData.id = review.id;
     editedReviewData.title = title;
@@ -97,7 +101,7 @@ function EditReviewModal({ hideModal, review }) {
           value={text}
           rows={5}
         />
-        <button id="listing-submit" type="submit">
+        <button id="listing-submit" type="submit" disabled={disable}>
           Update Review
         </button>
         <button id="delete-button" onClick={handleCancelClick}>

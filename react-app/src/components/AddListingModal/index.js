@@ -19,6 +19,7 @@ function AddListingModal() {
   const [imageLoading, setImageLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [disable, setDisable] = useState(false);
 
   useEffect(() => {
     let errors = [];
@@ -52,6 +53,7 @@ function AddListingModal() {
 
   const submitListing = () => {
     setHasSubmitted(true);
+    setDisable(true);
 
     if (errors.length > 0) return;
 
@@ -155,7 +157,7 @@ function AddListingModal() {
                 name="file"
                 onChange={updateImage}
               />
-              <button id="listing-submit" type="submit">
+              <button id="listing-submit" type="submit" disabled={disable}>
                 Submit Listing
               </button>
               {imageLoading && (

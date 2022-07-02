@@ -4,13 +4,11 @@ import { useDispatch } from "react-redux";
 import { authenticate } from "./store/session";
 import NavBar from "./components/Navigation/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import UsersList from "./components/UsersList";
-import User from "./components/User";
 import Listings from "./components/Listings";
-import SplashPage from './components/SplashPage';
-import SingleListing from './components/SingleListing';
-import SearchResults from './components/SearchResults';
-import Profile from './components/Profile';
+import SplashPage from "./components/SplashPage";
+import SingleListing from "./components/SingleListing";
+import SearchResults from "./components/SearchResults";
+import Profile from "./components/Profile";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -31,12 +29,6 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <ProtectedRoute path="/users" exact={true}>
-          <UsersList />
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-        </ProtectedRoute>
         <ProtectedRoute path="/listings" exact={true}>
           <Listings />
         </ProtectedRoute>

@@ -498,18 +498,18 @@ body {
     font-size: 26pt;
     padding-top: 170px;
   }
-  
+
   .info2 {
     font-size: 14pt;
     margin-top: 70px;
   }
-  
+
   .info h1 {
     font-family: "Staatliches", cursive;
     letter-spacing: 4px;
     color: rgb(158, 223, 237);
   }
-  
+
   .info h2 {
     margin-top: 10px;
     font-size: 20pt;
@@ -835,11 +835,11 @@ select:focus {
   margin-left: 20px;
 }
 
-@media only screen and (min-device-width: 150px) and (max-device-width: 365px) {
+@media only screen and (min-device-width: 150px) and (max-device-width: 400px) {
   .nav-container {
     width: fit-content;
     top: 0;
-    height: auto;
+    height: 150px;
     position: absolute;
     display: flex;
     overflow: hidden;
@@ -851,6 +851,40 @@ select:focus {
     background-color: transparent;
   }
 
+  .home-button {
+    margin-left: 10px;
+  }
+
+  .home-button h3 {
+    display: none;
+    margin-left: 0px;
+  }
+
+  .home-button img {
+    height: 200%;
+    width: 200%;
+    margin-right: 80px;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+
+  #nav-buttons {
+    text-align: center;
+    height: 100px;
+    padding: 10px;
+    width: 150px;
+  }
+
+  h3 {
+    display: block;
+    font-size: 2.5em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
   .static-nav,
   .logged-in-nav,
   .logged-out-nav {
@@ -859,40 +893,65 @@ select:focus {
     text-decoration: none;
     list-style-type: none;
     overflow: hidden;
+    margin-left: 0px;
+    margin-right: 10px;
   }
 
   .logged-in-nav li,
   .logged-out-nav li {
-    padding: 10px;
-    width: 180px;
+    padding: 200px;
+    width: 200px;
     margin-left: 10px;
     color: rgb(139, 196, 209);
     overflow: hidden;
-    font-size: 16pt;
+    font-size: 40pt;
+  }
+
+  button,
+  a {
+    font-size: 23pt;
+  }
+
+  .logged-in-nav li a,
+  .logged-out-nav li a {
+    font-size: 24pt;
   }
 
   .info {
-    margin-left: 360px;
+    margin-left: 240px;
     color: rgb(98, 149, 160);
     font-size: 26pt;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 200px;
     font-family: "Roboto Slab", serif;
-  }
-
-  .info2 {
-    margin-left: 360px;
-    color: rgb(141, 179, 187);
-    font-size: 16pt;
-    text-align: center;
-    margin-top: 60px;
-    font-family: "Roboto Slab", serif;
+    width: 300px;
+    margin-bottom: 40px;
   }
 
   .info h1 {
     font-family: "Staatliches", cursive;
     letter-spacing: 4px;
     color: rgb(158, 223, 237);
+    font-size: 80pt;
+    margin-left: 0px;
+  }
+
+  .info2 {
+    margin-left: 260px;
+    color: rgb(141, 179, 187);
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 300px;
+    font-family: "Roboto Slab", serif;
+    position: absolute;
+  }
+
+  .info h2 {
+    font-size: 18pt;
+  }
+
+  .info2 h2 {
+    font-size: 18pt;
   }
 
   .businesses {
@@ -930,10 +989,8 @@ select:focus {
 
   .shooting_star {
     position: absolute;
-    margin-left: 400px;
+    margin-left: 1000px;
     margin-bottom: 400px;
-    left: 50%;
-    top: 50%;
     height: 2px;
     background: linear-gradient(-90deg, rgb(158, 223, 237), rgba(0, 0, 255, 0));
     border-radius: 999px;
@@ -945,7 +1002,7 @@ select:focus {
   }
 }
 
-@media only screen and (min-device-width: 366px) and (max-device-width: 552px) {
+@media only screen and (min-device-width: 401px) and (max-device-width: 552px) {
   .nav-container {
     width: fit-content;
     top: 0;

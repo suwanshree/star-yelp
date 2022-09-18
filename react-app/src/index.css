@@ -934,24 +934,30 @@ select:focus {
     color: rgb(158, 223, 237);
     font-size: 80pt;
     margin-left: 0px;
+    text-align: center;
   }
 
   .info2 {
-    margin-left: 260px;
+    margin-left: 290px;
     color: rgb(141, 179, 187);
     font-size: 16pt;
     text-align: center;
-    margin-top: 300px;
+    margin-top: 200px;
     font-family: "Roboto Slab", serif;
     position: absolute;
+    width: 200px;
+  }
+
+  #slideshow {
+    margin-left: 80px;
   }
 
   .info h2 {
-    font-size: 18pt;
+    font-size: 24pt;
   }
 
   .info2 h2 {
-    font-size: 18pt;
+    font-size: 22pt;
   }
 
   .businesses {

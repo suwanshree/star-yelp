@@ -16,7 +16,7 @@ function SearchResults() {
   const filteredListings = listings.filter((listing) =>
     listing.title.toLowerCase().includes(currentSearch.toLowerCase())
   );
-  const [title, setTitle] = useState(`Star Yelp | Search`);
+  const [title] = useState(`Star Yelp | Search`);
 
   useEffect(() => {
     document.title = title;

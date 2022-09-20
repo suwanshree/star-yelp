@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "../../context/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import * as reviewActions from "../../store/review";
 import ReactStars from "react-rating-stars-component";
 
 function AddReviewModal({ listingId }) {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
-  const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
 
   const [userId, setUserId] = useState(sessionUser?.id);
@@ -76,8 +74,8 @@ function AddReviewModal({ listingId }) {
     edit: true,
     activeColor: "cyan",
     onChange: (e) => setRating(e),
-  }
-  
+  };
+
   return (
     <>
       <button className="add-review-button" onClick={() => setShowModal(true)}>

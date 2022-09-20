@@ -7,7 +7,7 @@ import review from "../../images/review.jpg";
 import reviews from "../../images/reviews.jpg";
 
 function SplashPage() {
-  const [title, setTitle] = useState("Star Yelp | Home");
+  const [title] = useState("Star Yelp | Home");
 
   useEffect(() => {
     document.title = title;

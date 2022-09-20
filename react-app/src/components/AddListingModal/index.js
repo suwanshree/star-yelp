@@ -10,7 +10,7 @@ function AddListingModal() {
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
 
-  const [user_id, setUserId] = useState(sessionUser?.id);
+  const [user_id] = useState(sessionUser?.id);
   const [title, setTitle] = useState("");
   const [location, setLocation] = useState("");
   const [category, setCategory] = useState("");
@@ -34,7 +34,8 @@ function AddListingModal() {
       errors.push("Location field needs minimum 3 characters.");
     if (location.length > 100)
       errors.push("Location field cannot exceed 100 characters.");
-    if (!category.length || category.length > 1) errors.push("Please select a category.");
+    if (!category.length || category.length > 1)
+      errors.push("Please select a category.");
     if (!description.length) errors.push("Description field cannot be empty.");
     if (description.length < 20)
       errors.push("Description field needs minimum 20 characters.");

@@ -4,7 +4,7 @@ import { editListing } from "../../store/listing";
 
 function EditListingModal({ hideModal, listing }) {
   const dispatch = useDispatch();
-  const [id, setId] = useState(listing.id);
+  const [id] = useState(listing.id);
   const [title, setTitle] = useState(listing.title);
   const [location, setLocation] = useState(listing.location);
   const [category, setCategory] = useState(listing.category);

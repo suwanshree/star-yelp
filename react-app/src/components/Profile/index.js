@@ -14,7 +14,7 @@ function Profile() {
   const filteredListings = listings.filter(
     (listing) => listing.userId === sessionUser.id
   );
-  const [title, setTitle] = useState(`Star Yelp | ${sessionUser.username}`);
+  const [title] = useState(`Star Yelp | ${sessionUser.username}`);
 
   useEffect(() => {
     document.title = title;

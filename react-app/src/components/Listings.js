@@ -14,7 +14,7 @@ function Listings() {
   const listingsObj = useSelector((state) => state.listings);
   const { setCurrentSearch } = useContext(SearchContext);
   const listings = Object.values(listingsObj);
-  const [title, setTitle] = useState("Star Yelp | Listings");
+  const [title] = useState("Star Yelp | Listings");
   const initialState = [true, false, false, false, false, false, false];
   const [checkList, setCheckList] = useState(initialState);
 

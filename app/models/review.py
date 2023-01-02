@@ -4,7 +4,7 @@ from datetime import date
 class Review(db.Model):
     __tablename__ = 'reviews'
 
-     if environment == "production":
+    if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
